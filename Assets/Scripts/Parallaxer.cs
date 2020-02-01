@@ -17,7 +17,6 @@ public class Parallaxer : MonoBehaviour
 
     void Update()
     {
-        // Calculate the position of the object
         var newPos = theCamera.position * ParallaxFactor; 
         // Force Z-axis to zero, since we're in 2D
         newPos.z = 0; 
