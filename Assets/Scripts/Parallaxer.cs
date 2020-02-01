@@ -18,7 +18,7 @@ public class Parallaxer : MonoBehaviour
     void Update()
     {
         // Caculate the position of the object
-        Vector3 newPos = theCamera.position * ParallaxFactor; 
+        var newPos = theCamera.position * ParallaxFactor; 
         // Force Z-axis to zero, since we're in 2D
         newPos.z = 0; 
         newPos.x += theStartPosition.x;
