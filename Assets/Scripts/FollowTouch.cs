@@ -14,7 +14,7 @@ public class FollowTouch : MonoBehaviour
         {
             // get mouse position in screen space
             // (if touch, gets average of all touches)
-            Vector3 screenPos = Input.mousePosition;
+            var screenPos = Input.mousePosition;
             // set a distance from the camera
             screenPos.z = 200.0f;
             // convert mouse position to world space
