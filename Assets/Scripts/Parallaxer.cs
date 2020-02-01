@@ -9,7 +9,7 @@ public class Parallaxer : MonoBehaviour
     Transform theCamera;
     Vector3 theStartPosition;
 
-    void Start()
+    private void Start()
     {
         theCamera = Camera.main.transform;
         theStartPosition = transform.position;
