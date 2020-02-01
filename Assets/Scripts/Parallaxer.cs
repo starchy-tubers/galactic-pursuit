@@ -15,7 +15,7 @@ public class Parallaxer : MonoBehaviour
         theStartPosition = transform.position;
     }
 
-    void Update()
+    private void Update()
     {
         // Caculate the position of the object
         var newPos = theCamera.position * ParallaxFactor; 
