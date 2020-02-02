@@ -6,12 +6,12 @@ public class FixedScroll : MonoBehaviour
 
     Transform mainCamera;
 
-    void Start()
+    private void Start()
     {
         mainCamera = Camera.main.transform;
     }
 
-    void Update()
+    private void Update()
     {
         mainCamera.position = new Vector3(mainCamera.position.x, mainCamera.position.y + theScrollSpeed, mainCamera.position.z);
     }

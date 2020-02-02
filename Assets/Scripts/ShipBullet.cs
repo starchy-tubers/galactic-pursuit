@@ -5,25 +5,25 @@ using UnityEngine;
 public class ShipBullet : MonoBehaviour
 {
     public float velY = 5f;
-    float velX = 0;
+    private const float velX = 0;
     Rigidbody2D rb;
 
-    void Start()
+    private void Start()
     {
         rb = GetComponent<Rigidbody2D>();
     }
 
-    void Update()
+    private void Update()
     {
         rb.velocity = new Vector2(velX, velY);
     }
 
-    void OnCollisionEnter2D()
+    private void OnCollisionEnter2D()
     {
         Destroy(gameObject);
     }
 
-    void OnBecameInvisible()
+    private void OnBecameInvisible()
     {
         Destroy(gameObject);
     }
