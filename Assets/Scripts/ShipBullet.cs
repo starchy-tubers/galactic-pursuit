@@ -18,6 +18,11 @@ public class ShipBullet : MonoBehaviour
         rb.velocity = new Vector2(velX, velY);
     }
 
+    void OnCollisionEnter2D()
+    {
+        Destroy(gameObject);
+    }
+
     void OnBecameInvisible()
     {
         Destroy(gameObject);

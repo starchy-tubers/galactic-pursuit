@@ -187,6 +187,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: RedEnemy (8)
       objectReference: {fileID: 0}
+    - target: {fileID: 8192353371284265268, guid: 747a9f2285b1f4650a1648496e189f30,
+        type: 3}
+      propertyPath: m_Mass
+      value: 0.4096
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 747a9f2285b1f4650a1648496e189f30, type: 3}
 --- !u!1 &251970618
@@ -5029,6 +5034,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: RedEnemy (5)
       objectReference: {fileID: 0}
+    - target: {fileID: 8192353371284265268, guid: 747a9f2285b1f4650a1648496e189f30,
+        type: 3}
+      propertyPath: m_Mass
+      value: 0.4096
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 747a9f2285b1f4650a1648496e189f30, type: 3}
 --- !u!1 &501388252
@@ -9836,7 +9846,7 @@ AudioSource:
   m_Volume: 1
   m_Pitch: 1
   Loop: 1
-  Mute: 0
+  Mute: 1
   Spatialize: 0
   SpatializePostEffects: 0
   Priority: 128
@@ -9967,7 +9977,7 @@ PrefabInstance:
     - target: {fileID: 6857071572901219995, guid: 976ec453e4f0548b0875ed0b8dc7b772,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -3
+      value: -3.5
       objectReference: {fileID: 0}
     - target: {fileID: 6857071572901219995, guid: 976ec453e4f0548b0875ed0b8dc7b772,
         type: 3}
@@ -10082,6 +10092,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: RedEnemy (4)
+      objectReference: {fileID: 0}
+    - target: {fileID: 8192353371284265268, guid: 747a9f2285b1f4650a1648496e189f30,
+        type: 3}
+      propertyPath: m_Mass
+      value: 0.4096
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 747a9f2285b1f4650a1648496e189f30, type: 3}
@@ -19698,6 +19713,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: RedEnemy (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 8192353371284265268, guid: 747a9f2285b1f4650a1648496e189f30,
+        type: 3}
+      propertyPath: m_Mass
+      value: 0.4096
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 747a9f2285b1f4650a1648496e189f30, type: 3}
 --- !u!1001 &1405393767
@@ -19766,6 +19786,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: RedEnemy (9)
+      objectReference: {fileID: 0}
+    - target: {fileID: 8192353371284265268, guid: 747a9f2285b1f4650a1648496e189f30,
+        type: 3}
+      propertyPath: m_Mass
+      value: 0.4096
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 747a9f2285b1f4650a1648496e189f30, type: 3}
@@ -29413,6 +29438,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: RedEnemy (6)
       objectReference: {fileID: 0}
+    - target: {fileID: 8192353371284265268, guid: 747a9f2285b1f4650a1648496e189f30,
+        type: 3}
+      propertyPath: m_Mass
+      value: 0.4096
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 747a9f2285b1f4650a1648496e189f30, type: 3}
 --- !u!1 &1825898188
@@ -34382,6 +34412,21 @@ PrefabInstance:
       propertyPath: m_Name
       value: RedEnemy (7)
       objectReference: {fileID: 0}
+    - target: {fileID: 8192353371284265268, guid: 747a9f2285b1f4650a1648496e189f30,
+        type: 3}
+      propertyPath: m_BodyType
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8192353371284265268, guid: 747a9f2285b1f4650a1648496e189f30,
+        type: 3}
+      propertyPath: m_GravityScale
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8192353371284265268, guid: 747a9f2285b1f4650a1648496e189f30,
+        type: 3}
+      propertyPath: m_Mass
+      value: 0.4096
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 747a9f2285b1f4650a1648496e189f30, type: 3}
 --- !u!1001 &2078185538
@@ -34450,6 +34495,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: RedEnemy (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: 8192353371284265268, guid: 747a9f2285b1f4650a1648496e189f30,
+        type: 3}
+      propertyPath: m_Mass
+      value: 0.4096
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 747a9f2285b1f4650a1648496e189f30, type: 3}
@@ -34520,6 +34570,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: RedEnemy (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 8192353371284265268, guid: 747a9f2285b1f4650a1648496e189f30,
+        type: 3}
+      propertyPath: m_Mass
+      value: 0.4096
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 747a9f2285b1f4650a1648496e189f30, type: 3}
 --- !u!1001 &2129434000
@@ -34588,6 +34643,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: RedEnemy
+      objectReference: {fileID: 0}
+    - target: {fileID: 8192353371284265268, guid: 747a9f2285b1f4650a1648496e189f30,
+        type: 3}
+      propertyPath: m_Mass
+      value: 0.4096
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 747a9f2285b1f4650a1648496e189f30, type: 3}

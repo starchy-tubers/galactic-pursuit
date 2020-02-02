@@ -10,12 +10,22 @@ public class EnemyMovement : MonoBehaviour
     private enum Direction { Left, Right, Up, Down };
     private Direction shipDirection;
     Vector3 startPosition;
+    public int enemyhealth = 5;
 
     void Start()
     {
         fixedScroll = (FixedScroll)FindObjectOfType(typeof(FixedScroll));
         shipDirection = Direction.Left;
         startPosition = transform.position;
+    }
+
+    void OnCollisionEnter2D()
+    {
+        enemyhealth -= 1;
+        if (enemyhealth <= 0)
+        {
+            Destroy(gameObject);
+        }
     }
 
     void Update()
