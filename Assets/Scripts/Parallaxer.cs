@@ -9,7 +9,7 @@ public class Parallaxer : MonoBehaviour
     Transform theCamera;
     Vector3 theStartPosition;
 
-    void Start()
+    private void Start()
     {
         theCamera = Camera.main.transform;
         theStartPosition = transform.position;
@@ -17,7 +17,7 @@ public class Parallaxer : MonoBehaviour
 
     private void Update()
     {
-        // Caculate the position of the object
+        // Calculate the position of the object
         var newPos = theCamera.position * ParallaxFactor; 
         // Force Z-axis to zero, since we're in 2D
         newPos.z = 0; 

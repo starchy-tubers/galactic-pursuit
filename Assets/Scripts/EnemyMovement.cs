@@ -1,10 +1,9 @@
-﻿using System.Collections;
-using System.Collections.Generic;
+﻿using System;
 using UnityEngine;
 
 public class EnemyMovement : MonoBehaviour
 {
-    private float movementSpeed = 1f;
+    private const float movementSpeed = 1f;
     FixedScroll fixedScroll;
 
     private enum Direction { Left, Right, Up, Down };
@@ -12,14 +11,14 @@ public class EnemyMovement : MonoBehaviour
     Vector3 startPosition;
     public int enemyHealth = 5;
 
-    void Start()
+    private void Start()
     {
         fixedScroll = (FixedScroll)FindObjectOfType(typeof(FixedScroll));
         shipDirection = Direction.Left;
         startPosition = transform.position;
     }
 
-    void OnCollisionEnter2D()
+    private void OnCollisionEnter2D()
     {
         enemyHealth -= 1;
         if (enemyHealth <= 0)
@@ -28,24 +27,37 @@ public class EnemyMovement : MonoBehaviour
         }
     }
 
-    void Update()
+    private void Update()
     {
         transform.position = new Vector3(transform.position.x, transform.position.y + fixedScroll.theScrollSpeed, 1);
-        if (shipDirection == Direction.Left)
+        switch (shipDirection)
         {
-            transform.position = transform.position + new Vector3(2 * movementSpeed * Time.deltaTime, 0);
-            if (transform.position.x > startPosition.x + 1)
+            case Direction.Left:
             {
-                shipDirection = Direction.Right;   
+                transform.position = transform.position + new Vector3(2 * movementSpeed * Time.deltaTime, 0);
+                if (transform.position.x > startPosition.x + 1)
+                {
+                    shipDirection = Direction.Right;   
+                }
+
+                break;
             }
-        }
-        else if (shipDirection == Direction.Right)
-        {
-            transform.position = transform.position - new Vector3(2 * movementSpeed * Time.deltaTime, 0);
-            if (transform.position.x < startPosition.x - 1)
+            case Direction.Right:
             {
-                shipDirection = Direction.Left;
+                transform.position = transform.position - new Vector3(2 * movementSpeed * Time.deltaTime, 0);
+                if (transform.position.x < startPosition.x - 1)
+                {
+                    shipDirection = Direction.Left;
+                }
+
+                break;
             }
+            case Direction.Up:
+                break;
+            case Direction.Down:
+                break;
+            default:
+                throw new ArgumentOutOfRangeException();
         }
     }
 }

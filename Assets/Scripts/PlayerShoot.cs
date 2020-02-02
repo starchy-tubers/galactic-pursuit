@@ -9,23 +9,21 @@ public class PlayerShoot : MonoBehaviour
     bool canShoot = true;
     public AudioSource audioData;
 
-    void Start()
+    private void Start()
     {
         audioData = GetComponent<AudioSource>();
     }
 
-    void Update()
+    private void Update()
     {
-        if (canShoot)
-        {
-            canShoot = false;
-            Instantiate(ShipBullet, transform.position, transform.rotation);
-            audioData.Play(0);
-            StartCoroutine(NoFire());
-        }
+        if (!canShoot) return;
+        canShoot = false;
+        Instantiate(ShipBullet, transform.position, transform.rotation);
+        audioData.Play(0);
+        StartCoroutine(NoFire());
     }
 
-    IEnumerator NoFire()
+    private IEnumerator NoFire()
     {
         yield return new WaitForSeconds(delayTime);
         canShoot = true;
