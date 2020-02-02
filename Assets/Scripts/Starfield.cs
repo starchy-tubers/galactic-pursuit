@@ -13,7 +13,7 @@ public class Starfield : MonoBehaviour
     public float FieldHeight = 25f;
     public float ParallaxFactor = 0f;
     public bool Colorize = false;
-
+    
     float xOffset;
     float yOffset;
 
@@ -26,7 +26,7 @@ public class Starfield : MonoBehaviour
         theCamera = Camera.main.transform;
         Stars = new ParticleSystem.Particle[MaxStars];
         Particles = GetComponent<ParticleSystem>();
-
+        
         Assert.IsNotNull(Particles, "Particle system missing from object!");
 
         xOffset = FieldWidth * 0.5f;                                                                                                        // Offset the coordinates to distribute the spread
