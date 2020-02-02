@@ -10,7 +10,7 @@ public class EnemyMovement : MonoBehaviour
     private enum Direction { Left, Right, Up, Down };
     private Direction shipDirection;
     Vector3 startPosition;
-    public int enemyhealth = 5;
+    public int enemyHealth = 5;
 
     void Start()
     {
@@ -21,8 +21,8 @@ public class EnemyMovement : MonoBehaviour
 
     void OnCollisionEnter2D()
     {
-        enemyhealth -= 1;
-        if (enemyhealth <= 0)
+        enemyHealth -= 1;
+        if (enemyHealth <= 0)
         {
             Destroy(gameObject);
         }
