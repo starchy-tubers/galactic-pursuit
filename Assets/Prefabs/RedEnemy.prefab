@@ -12,10 +12,11 @@ GameObject:
   - component: {fileID: 2673925361479068186}
   - component: {fileID: 2673925361479068187}
   - component: {fileID: 8192353371284265268}
-  - component: {fileID: 4411617362116866806}
-  m_Layer: 0
+  - component: {fileID: 5279009836245027146}
+  - component: {fileID: 1599603041782035596}
+  m_Layer: 2
   m_Name: RedEnemy
-  m_TagString: Untagged
+  m_TagString: RedEnemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -28,7 +29,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2673925361479068184}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 2, z: 0}
+  m_LocalPosition: {x: 0, y: 2, z: 5}
   m_LocalScale: {x: 2, y: 2, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -95,6 +96,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e091f28dfbf284826bdc0313f5aa3f3e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  enemyHealth: 5
 --- !u!50 &8192353371284265268
 Rigidbody2D:
   serializedVersion: 4
@@ -116,7 +118,7 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!61 &4411617362116866806
+--- !u!61 &5279009836245027146
 BoxCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -142,3 +144,18 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.32, y: 0.32}
   m_EdgeRadius: 0
+--- !u!114 &1599603041782035596
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2673925361479068184}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bad965274b0077b41b4847760ac58034, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  EnemyBullet: {fileID: 4397074148663674926, guid: 69f238c0d3e12974893dc4c5ea57d241,
+    type: 3}
+  delayTime: 2

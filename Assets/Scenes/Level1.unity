@@ -185,7 +185,7 @@ PrefabInstance:
     - target: {fileID: 2673925361479068184, guid: 747a9f2285b1f4650a1648496e189f30,
         type: 3}
       propertyPath: m_Name
-      value: RedEnemy (8)
+      value: RedEnemy (7)
       objectReference: {fileID: 0}
     - target: {fileID: 8192353371284265268, guid: 747a9f2285b1f4650a1648496e189f30,
         type: 3}
@@ -239,13 +239,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5b698d05392624f81863ad1149cd1140, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MaxStars: 30
-  StarSize: 0.08
-  StarSizeRange: 0.5
-  FieldWidth: 18
-  FieldHeight: 25
-  ParallaxFactor: 0.5
-  Colorize: 0
+  maxStars: 100
+  starSize: 0.1
+  starSizeRange: 0.5
+  fieldWidth: 20
+  fieldHeight: 25
+  parallaxFactor: 0
+  colorize: 0
 --- !u!199 &251970621
 ParticleSystemRenderer:
   serializedVersion: 6
@@ -5012,7 +5012,7 @@ PrefabInstance:
     - target: {fileID: 2673925361479068181, guid: 747a9f2285b1f4650a1648496e189f30,
         type: 3}
       propertyPath: m_RootOrder
-      value: 6
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 2673925361479068181, guid: 747a9f2285b1f4650a1648496e189f30,
         type: 3}
@@ -5032,7 +5032,7 @@ PrefabInstance:
     - target: {fileID: 2673925361479068184, guid: 747a9f2285b1f4650a1648496e189f30,
         type: 3}
       propertyPath: m_Name
-      value: RedEnemy (5)
+      value: RedEnemy (3)
       objectReference: {fileID: 0}
     - target: {fileID: 8192353371284265268, guid: 747a9f2285b1f4650a1648496e189f30,
         type: 3}
@@ -5086,13 +5086,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5b698d05392624f81863ad1149cd1140, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MaxStars: 75
-  StarSize: 0.07
-  StarSizeRange: 0.45
-  FieldWidth: 18
-  FieldHeight: 25
-  ParallaxFactor: 0.7
-  Colorize: 0
+  maxStars: 100
+  starSize: 0.1
+  starSizeRange: 0.5
+  fieldWidth: 20
+  fieldHeight: 25
+  parallaxFactor: 0
+  colorize: 0
 --- !u!199 &501388255
 ParticleSystemRenderer:
   serializedVersion: 6
@@ -9939,7 +9939,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 0}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 12
+  m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &612032874
 PrefabInstance:
@@ -9948,6 +9948,62 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 0}
+      propertyPath: m_SpriteTilingProperty.oldSize.x
+      value: 0.61
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: m_SpriteTilingProperty.oldSize.y
+      value: 0.62
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: m_SpriteTilingProperty.newSize.x
+      value: 0.61
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: m_SpriteTilingProperty.newSize.y
+      value: 0.62
+      objectReference: {fileID: 0}
+    - target: {fileID: -301822981366642799, guid: 976ec453e4f0548b0875ed0b8dc7b772,
+        type: 3}
+      propertyPath: m_SpriteTilingProperty.oldSize.x
+      value: 0.61
+      objectReference: {fileID: 0}
+    - target: {fileID: -301822981366642799, guid: 976ec453e4f0548b0875ed0b8dc7b772,
+        type: 3}
+      propertyPath: m_SpriteTilingProperty.oldSize.y
+      value: 0.62
+      objectReference: {fileID: 0}
+    - target: {fileID: -301822981366642799, guid: 976ec453e4f0548b0875ed0b8dc7b772,
+        type: 3}
+      propertyPath: m_SpriteTilingProperty.newSize.x
+      value: 0.61
+      objectReference: {fileID: 0}
+    - target: {fileID: -301822981366642799, guid: 976ec453e4f0548b0875ed0b8dc7b772,
+        type: 3}
+      propertyPath: m_SpriteTilingProperty.newSize.y
+      value: 0.62
+      objectReference: {fileID: 0}
+    - target: {fileID: 1227282892561903721, guid: 976ec453e4f0548b0875ed0b8dc7b772,
+        type: 3}
+      propertyPath: m_SpriteTilingProperty.oldSize.x
+      value: 0.61
+      objectReference: {fileID: 0}
+    - target: {fileID: 1227282892561903721, guid: 976ec453e4f0548b0875ed0b8dc7b772,
+        type: 3}
+      propertyPath: m_SpriteTilingProperty.oldSize.y
+      value: 0.62
+      objectReference: {fileID: 0}
+    - target: {fileID: 1227282892561903721, guid: 976ec453e4f0548b0875ed0b8dc7b772,
+        type: 3}
+      propertyPath: m_SpriteTilingProperty.newSize.x
+      value: 0.61
+      objectReference: {fileID: 0}
+    - target: {fileID: 1227282892561903721, guid: 976ec453e4f0548b0875ed0b8dc7b772,
+        type: 3}
+      propertyPath: m_SpriteTilingProperty.newSize.y
+      value: 0.62
+      objectReference: {fileID: 0}
     - target: {fileID: 6857071572901219992, guid: 976ec453e4f0548b0875ed0b8dc7b772,
         type: 3}
       propertyPath: m_Sprite
@@ -10007,7 +10063,7 @@ PrefabInstance:
     - target: {fileID: 6857071572901219995, guid: 976ec453e4f0548b0875ed0b8dc7b772,
         type: 3}
       propertyPath: m_RootOrder
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6857071572901219995, guid: 976ec453e4f0548b0875ed0b8dc7b772,
         type: 3}
@@ -10071,7 +10127,7 @@ PrefabInstance:
     - target: {fileID: 2673925361479068181, guid: 747a9f2285b1f4650a1648496e189f30,
         type: 3}
       propertyPath: m_RootOrder
-      value: 7
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 2673925361479068181, guid: 747a9f2285b1f4650a1648496e189f30,
         type: 3}
@@ -10091,7 +10147,7 @@ PrefabInstance:
     - target: {fileID: 2673925361479068184, guid: 747a9f2285b1f4650a1648496e189f30,
         type: 3}
       propertyPath: m_Name
-      value: RedEnemy (4)
+      value: RedEnemy (5)
       objectReference: {fileID: 0}
     - target: {fileID: 8192353371284265268, guid: 747a9f2285b1f4650a1648496e189f30,
         type: 3}
@@ -10145,13 +10201,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5b698d05392624f81863ad1149cd1140, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MaxStars: 100
-  StarSize: 0.06
-  StarSizeRange: 0.35
-  FieldWidth: 18
-  FieldHeight: 25
-  ParallaxFactor: 0.8
-  Colorize: 0
+  maxStars: 100
+  starSize: 0.1
+  starSizeRange: 0.5
+  fieldWidth: 20
+  fieldHeight: 25
+  parallaxFactor: 0
+  colorize: 0
 --- !u!199 &854576230
 ParticleSystemRenderer:
   serializedVersion: 6
@@ -14918,13 +14974,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5b698d05392624f81863ad1149cd1140, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MaxStars: 15
-  StarSize: 0.1
-  StarSizeRange: 0.5
-  FieldWidth: 18
-  FieldHeight: 25
-  ParallaxFactor: 0
-  Colorize: 0
+  maxStars: 100
+  starSize: 0.1
+  starSizeRange: 0.5
+  fieldWidth: 20
+  fieldHeight: 25
+  parallaxFactor: 0
+  colorize: 0
 --- !u!199 &1097092097
 ParticleSystemRenderer:
   serializedVersion: 6
@@ -19646,80 +19702,6 @@ ParticleSystem:
         m_PostInfinity: 2
         m_RotationOrder: 4
     vectorLabel1_3: W
---- !u!1001 &1369185696
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 2673925361479068181, guid: 747a9f2285b1f4650a1648496e189f30,
-        type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 9
-      objectReference: {fileID: 0}
-    - target: {fileID: 2673925361479068181, guid: 747a9f2285b1f4650a1648496e189f30,
-        type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 2673925361479068181, guid: 747a9f2285b1f4650a1648496e189f30,
-        type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2673925361479068181, guid: 747a9f2285b1f4650a1648496e189f30,
-        type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2673925361479068181, guid: 747a9f2285b1f4650a1648496e189f30,
-        type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2673925361479068181, guid: 747a9f2285b1f4650a1648496e189f30,
-        type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2673925361479068181, guid: 747a9f2285b1f4650a1648496e189f30,
-        type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 2673925361479068181, guid: 747a9f2285b1f4650a1648496e189f30,
-        type: 3}
-      propertyPath: m_RootOrder
-      value: 10
-      objectReference: {fileID: 0}
-    - target: {fileID: 2673925361479068181, guid: 747a9f2285b1f4650a1648496e189f30,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2673925361479068181, guid: 747a9f2285b1f4650a1648496e189f30,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2673925361479068181, guid: 747a9f2285b1f4650a1648496e189f30,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2673925361479068184, guid: 747a9f2285b1f4650a1648496e189f30,
-        type: 3}
-      propertyPath: m_Name
-      value: RedEnemy (1)
-      objectReference: {fileID: 0}
-    - target: {fileID: 8192353371284265268, guid: 747a9f2285b1f4650a1648496e189f30,
-        type: 3}
-      propertyPath: m_Mass
-      value: 0.4096
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 747a9f2285b1f4650a1648496e189f30, type: 3}
 --- !u!1001 &1405393767
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -19765,7 +19747,7 @@ PrefabInstance:
     - target: {fileID: 2673925361479068181, guid: 747a9f2285b1f4650a1648496e189f30,
         type: 3}
       propertyPath: m_RootOrder
-      value: 1
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 2673925361479068181, guid: 747a9f2285b1f4650a1648496e189f30,
         type: 3}
@@ -19785,7 +19767,7 @@ PrefabInstance:
     - target: {fileID: 2673925361479068184, guid: 747a9f2285b1f4650a1648496e189f30,
         type: 3}
       propertyPath: m_Name
-      value: RedEnemy (9)
+      value: RedEnemy (6)
       objectReference: {fileID: 0}
     - target: {fileID: 8192353371284265268, guid: 747a9f2285b1f4650a1648496e189f30,
         type: 3}
@@ -24552,7 +24534,7 @@ Transform:
   - {fileID: 854576228}
   - {fileID: 1877875705}
   m_Father: {fileID: 0}
-  m_RootOrder: 13
+  m_RootOrder: 12
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1424163552
 MonoBehaviour:
@@ -24566,13 +24548,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5b698d05392624f81863ad1149cd1140, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MaxStars: 50
-  StarSize: 0.1
-  StarSizeRange: 0.5
-  FieldWidth: 20
-  FieldHeight: 25
-  ParallaxFactor: 0
-  Colorize: 0
+  maxStars: 100
+  starSize: 0.1
+  starSizeRange: 0.5
+  fieldWidth: 20
+  fieldHeight: 25
+  parallaxFactor: 0
+  colorize: 0
 --- !u!1 &1737559878
 GameObject:
   m_ObjectHideFlags: 0
@@ -24618,13 +24600,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5b698d05392624f81863ad1149cd1140, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MaxStars: 45
-  StarSize: 0.08
-  StarSizeRange: 0.5
-  FieldWidth: 18
-  FieldHeight: 25
-  ParallaxFactor: 0.6
-  Colorize: 0
+  maxStars: 100
+  starSize: 0.1
+  starSizeRange: 0.5
+  fieldWidth: 20
+  fieldHeight: 25
+  parallaxFactor: 0
+  colorize: 0
 --- !u!199 &1737559881
 ParticleSystemRenderer:
   serializedVersion: 6
@@ -29416,7 +29398,7 @@ PrefabInstance:
     - target: {fileID: 2673925361479068181, guid: 747a9f2285b1f4650a1648496e189f30,
         type: 3}
       propertyPath: m_RootOrder
-      value: 5
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 2673925361479068181, guid: 747a9f2285b1f4650a1648496e189f30,
         type: 3}
@@ -29436,7 +29418,7 @@ PrefabInstance:
     - target: {fileID: 2673925361479068184, guid: 747a9f2285b1f4650a1648496e189f30,
         type: 3}
       propertyPath: m_Name
-      value: RedEnemy (6)
+      value: RedEnemy (4)
       objectReference: {fileID: 0}
     - target: {fileID: 8192353371284265268, guid: 747a9f2285b1f4650a1648496e189f30,
         type: 3}
@@ -29573,13 +29555,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5b698d05392624f81863ad1149cd1140, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MaxStars: 150
-  StarSize: 0.04
-  StarSizeRange: 0.25
-  FieldWidth: 18
-  FieldHeight: 25
-  ParallaxFactor: 0.9
-  Colorize: 0
+  maxStars: 100
+  starSize: 0.1
+  starSizeRange: 0.5
+  fieldWidth: 20
+  fieldHeight: 25
+  parallaxFactor: 0
+  colorize: 0
 --- !u!199 &1877875707
 ParticleSystemRenderer:
   serializedVersion: 6
@@ -34330,7 +34312,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 14
+  m_RootOrder: 13
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1907257676
 MonoBehaviour:
@@ -34390,7 +34372,7 @@ PrefabInstance:
     - target: {fileID: 2673925361479068181, guid: 747a9f2285b1f4650a1648496e189f30,
         type: 3}
       propertyPath: m_RootOrder
-      value: 4
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 2673925361479068181, guid: 747a9f2285b1f4650a1648496e189f30,
         type: 3}
@@ -34410,7 +34392,7 @@ PrefabInstance:
     - target: {fileID: 2673925361479068184, guid: 747a9f2285b1f4650a1648496e189f30,
         type: 3}
       propertyPath: m_Name
-      value: RedEnemy (7)
+      value: RedEnemy (8)
       objectReference: {fileID: 0}
     - target: {fileID: 8192353371284265268, guid: 747a9f2285b1f4650a1648496e189f30,
         type: 3}
@@ -34494,7 +34476,7 @@ PrefabInstance:
     - target: {fileID: 2673925361479068184, guid: 747a9f2285b1f4650a1648496e189f30,
         type: 3}
       propertyPath: m_Name
-      value: RedEnemy (3)
+      value: RedEnemy (2)
       objectReference: {fileID: 0}
     - target: {fileID: 8192353371284265268, guid: 747a9f2285b1f4650a1648496e189f30,
         type: 3}
@@ -34568,7 +34550,7 @@ PrefabInstance:
     - target: {fileID: 2673925361479068184, guid: 747a9f2285b1f4650a1648496e189f30,
         type: 3}
       propertyPath: m_Name
-      value: RedEnemy (2)
+      value: RedEnemy (1)
       objectReference: {fileID: 0}
     - target: {fileID: 8192353371284265268, guid: 747a9f2285b1f4650a1648496e189f30,
         type: 3}
@@ -34622,7 +34604,7 @@ PrefabInstance:
     - target: {fileID: 2673925361479068181, guid: 747a9f2285b1f4650a1648496e189f30,
         type: 3}
       propertyPath: m_RootOrder
-      value: 11
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 2673925361479068181, guid: 747a9f2285b1f4650a1648496e189f30,
         type: 3}
@@ -34644,10 +34626,30 @@ PrefabInstance:
       propertyPath: m_Name
       value: RedEnemy
       objectReference: {fileID: 0}
+    - target: {fileID: 5279009836245027146, guid: 747a9f2285b1f4650a1648496e189f30,
+        type: 3}
+      propertyPath: m_Offset.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5279009836245027146, guid: 747a9f2285b1f4650a1648496e189f30,
+        type: 3}
+      propertyPath: m_Offset.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5279009836245027146, guid: 747a9f2285b1f4650a1648496e189f30,
+        type: 3}
+      propertyPath: m_AutoTiling
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8192353371284265268, guid: 747a9f2285b1f4650a1648496e189f30,
         type: 3}
       propertyPath: m_Mass
       value: 0.4096
+      objectReference: {fileID: 0}
+    - target: {fileID: 8192353371284265268, guid: 747a9f2285b1f4650a1648496e189f30,
+        type: 3}
+      propertyPath: m_BodyType
+      value: 2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 747a9f2285b1f4650a1648496e189f30, type: 3}

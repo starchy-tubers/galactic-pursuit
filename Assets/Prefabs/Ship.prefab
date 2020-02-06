@@ -16,9 +16,10 @@ GameObject:
   - component: {fileID: 6857071572901219999}
   - component: {fileID: 6857071572901219998}
   - component: {fileID: -6014195072858384978}
-  m_Layer: 0
+  - component: {fileID: 1227282892561903721}
+  m_Layer: 1
   m_Name: Ship
-  m_TagString: Untagged
+  m_TagString: Ship
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -122,7 +123,7 @@ Rigidbody2D:
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
-  m_Mass: 1
+  m_Mass: 1000000
   m_LinearDrag: 0
   m_AngularDrag: 0.05
   m_GravityScale: 0
@@ -163,7 +164,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: de55a6334fb4ca843851235329e00556, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ShipBullet: {fileID: 3115082266749353698, guid: 40c9aa8d970e8564f8c7c7b34ad6c81e,
+  ShipBullet: {fileID: 679952546822524974, guid: 651615905a752e3449ed7de668255824,
     type: 3}
   delayTime: 0.25
   audioData: {fileID: 0}
@@ -263,3 +264,29 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!61 &1227282892561903721
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6857071572901219993}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 0.69, y: 0.7}
+    newSize: {x: 0.69, y: 0.7}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 0.69, y: 0.7}
+  m_EdgeRadius: 0
