@@ -9838,7 +9838,7 @@ AudioSource:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 548836288}
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 8845bb7356fb6894ea47e5ced632c31a, type: 3}
@@ -9963,6 +9963,21 @@ PrefabInstance:
     - target: {fileID: 0}
       propertyPath: m_SpriteTilingProperty.newSize.y
       value: 0.62
+      objectReference: {fileID: 0}
+    - target: {fileID: -6014195072858384978, guid: 976ec453e4f0548b0875ed0b8dc7b772,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -6014195072858384978, guid: 976ec453e4f0548b0875ed0b8dc7b772,
+        type: 3}
+      propertyPath: BypassReverbZones
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -6014195072858384978, guid: 976ec453e4f0548b0875ed0b8dc7b772,
+        type: 3}
+      propertyPath: m_PlayOnAwake
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: -301822981366642799, guid: 976ec453e4f0548b0875ed0b8dc7b772,
         type: 3}

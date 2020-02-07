@@ -1,11 +1,10 @@
 ﻿using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class PlayerShoot : MonoBehaviour
 {
     public GameObject ShipBullet;
-    public float delayTime = 0.2f;
+    public float delayTime = 0.25f;
     bool canShoot = true;
     public AudioSource audioData;
 
@@ -18,14 +17,14 @@ public class PlayerShoot : MonoBehaviour
     {
         if (!canShoot) return;
         canShoot = false;
-        Instantiate(ShipBullet, transform.position, transform.rotation);
-        audioData.Play(0);
         StartCoroutine(NoFire());
     }
 
     private IEnumerator NoFire()
     {
         yield return new WaitForSeconds(delayTime);
+        Instantiate(ShipBullet, transform.position, transform.rotation);
+        audioData.Play(0);
         canShoot = true;
     }
 }
