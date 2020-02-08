@@ -7,6 +7,8 @@ TagManager:
   - RedEnemy
   - Ship
   - EnemyBullet
+  - RedEnemyHurt
+  - ShipBullet
   layers:
   - Default
   - TransparentFX
