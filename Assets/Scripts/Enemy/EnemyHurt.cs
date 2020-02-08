@@ -5,14 +5,14 @@ using UnityEngine;
 public class EnemyHurt : MonoBehaviour
 {
     private SpriteRenderer spriteRenderer;
-    public Sprite sprite1;
-    public Sprite sprite2;
+    public Sprite notDamaged;
+    public Sprite damaged;
     public float delayTime;
     void Start()
     {
         spriteRenderer = GetComponent<SpriteRenderer>();
         if (spriteRenderer.sprite == null)
-            spriteRenderer.sprite = sprite1;
+            spriteRenderer.sprite = notDamaged;
     }
 
     private void OnCollisionEnter2D(Collision2D col)
@@ -26,7 +26,7 @@ public class EnemyHurt : MonoBehaviour
 
     void ChangeSprite()
     {
-        spriteRenderer.sprite = sprite2;
+        spriteRenderer.sprite = damaged;
     }
     private IEnumerator SpriteDelay()
     {
@@ -35,6 +35,6 @@ public class EnemyHurt : MonoBehaviour
     }
     void ChangeSprite2()
     {
-        spriteRenderer.sprite = sprite1;
+        spriteRenderer.sprite = notDamaged;
     }
 }

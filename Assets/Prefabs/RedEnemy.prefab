@@ -171,6 +171,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 05481ea7100f4784eb598503d488dc15, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sprite1: {fileID: 21300000, guid: 87da63fbf84ae4cdd8c26f419e71030f, type: 3}
-  sprite2: {fileID: 21300000, guid: 4ad0a4988141e7348bb6605cc1c41877, type: 3}
+  notDamaged: {fileID: 21300000, guid: 87da63fbf84ae4cdd8c26f419e71030f, type: 3}
+  damaged: {fileID: 21300000, guid: 4ad0a4988141e7348bb6605cc1c41877, type: 3}
   delayTime: 0.05
