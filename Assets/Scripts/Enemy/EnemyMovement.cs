@@ -21,7 +21,7 @@ public class EnemyMovement : MonoBehaviour
     private void OnCollisionEnter2D()
     {
         enemyHealth -= 1;
-        if (enemyHealth <= 0)
+        if (enemyHealth == 0)
         {
             Destroy(gameObject);
         }

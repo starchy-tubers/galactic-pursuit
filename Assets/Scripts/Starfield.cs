@@ -37,7 +37,7 @@ public class Starfield : MonoBehaviour
         for (var i = 0; i < maxStars; i++)
         {
             // Randomize star size within parameters
-            var randSize = Random.Range(1f - starSizeRange, starSizeRange + 1f);     
+            var randSize = UnityEngine.Random.Range(1f - starSizeRange, starSizeRange + 1f);     
             // If coloration is desired, color based on size
             var scaledColor = (true == colorize) ? randSize - starSizeRange : 1f;    
 
@@ -91,8 +91,8 @@ public class Starfield : MonoBehaviour
     //
     private Vector3 GetRandomInRectangle(float width, float height)
     {
-        var x = Random.Range(0, width);
-        var y = Random.Range(0, height);
+        var x = UnityEngine.Random.Range(0, width);
+        var y = UnityEngine.Random.Range(0, height);
         return new Vector3(x - xOffset, y - yOffset, 0);
     }
 }
