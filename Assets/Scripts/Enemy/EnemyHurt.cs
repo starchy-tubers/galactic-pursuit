@@ -11,30 +11,22 @@ public class EnemyHurt : MonoBehaviour
     void Start()
     {
         spriteRenderer = GetComponent<SpriteRenderer>();
-        if (spriteRenderer.sprite == null)
-            spriteRenderer.sprite = notDamaged;
     }
 
-    private void OnCollisionEnter2D(Collision2D col)
+    private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (col.gameObject.CompareTag("ShipBullet"))
+        if (collision.gameObject.CompareTag("ShipBullet"))
         {
-            ChangeSprite();
+            spriteRenderer.sprite = damaged;
+            Animation.paused = true;
             StartCoroutine(SpriteDelay());
         }
     }
 
-    void ChangeSprite()
-    {
-        spriteRenderer.sprite = damaged;
-    }
     private IEnumerator SpriteDelay()
     {
         yield return new WaitForSeconds(delayTime);
-        ChangeSprite2();
-    }
-    void ChangeSprite2()
-    {
         spriteRenderer.sprite = notDamaged;
+        Animation.paused = false;
     }
 }
