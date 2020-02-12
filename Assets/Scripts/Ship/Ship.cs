@@ -3,7 +3,7 @@
 public class Ship : MonoBehaviour
 {
     FixedScroll fixedScroll;
-
+    public int shipHealth = 3;
     private void Start()
     {
         fixedScroll = (FixedScroll)FindObjectOfType(typeof(FixedScroll));
@@ -13,7 +13,12 @@ public class Ship : MonoBehaviour
     {
         if (col.gameObject.CompareTag("EnemyBullet"))
         {
-            Destroy(gameObject);
+            shipHealth -= 1;
+
+            if (shipHealth == 0) {
+
+                Destroy(gameObject);
+            }
         }
     }
 
