@@ -2,17 +2,10 @@
 
 public class FixedScroll : MonoBehaviour
 {
-    public float theScrollSpeed = 0.08f;
+    [SerializeField] private float theScrollSpeed = 0.0165f;
 
-    Transform mainCamera;
-
-    void Start()
+    private void Update()
     {
-        mainCamera = Camera.main.transform;
-    }
-
-    void Update()
-    {
-        mainCamera.position = new Vector3(mainCamera.position.x, mainCamera.position.y + theScrollSpeed, mainCamera.position.z);
+        transform.position = new Vector3(transform.position.x, transform.position.y + theScrollSpeed, transform.position.z);
     }
 }

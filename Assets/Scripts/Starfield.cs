@@ -2,78 +2,85 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Assertions;
+using UnityEngine.Serialization;
 
 
 public class Starfield : MonoBehaviour
 {
-    public int MaxStars = 100;
-    public float StarSize = 0.1f;
-    public float StarSizeRange = 0.5f;
-    public float FieldWidth = 20f;
-    public float FieldHeight = 25f;
-    public float ParallaxFactor = 0f;
-    public bool Colorize = false;
-
+    public int maxStars = 100;
+    public float starSize = 0.1f;
+    public float starSizeRange = 0.5f;
+    public float fieldWidth = 20f;
+    public float fieldHeight = 25f;
+    public float parallaxFactor = 0f;
+    public bool colorize = false;
+    
     float xOffset;
     float yOffset;
 
-    ParticleSystem Particles;
-    ParticleSystem.Particle[] Stars;
-    Transform theCamera;
+    private ParticleSystem _particles;
+    private ParticleSystem.Particle[] _stars;
+    private Transform _theCamera;
 
-    void Awake()
+    private void Awake()
     {
-        theCamera = Camera.main.transform;
-        Stars = new ParticleSystem.Particle[MaxStars];
-        Particles = GetComponent<ParticleSystem>();
+        _theCamera = Camera.main.transform;
+        _stars = new ParticleSystem.Particle[maxStars];
+        _particles = GetComponent<ParticleSystem>();
+        
+        Assert.IsNotNull(_particles, "Particle system missing from object!");
+        // Offset the coordinates to distribute the spread
+        xOffset = fieldWidth * 0.5f;  
+        // around the object's center
+        yOffset = fieldHeight * 0.5f;                                                                                                       
 
-        Assert.IsNotNull(Particles, "Particle system missing from object!");
-
-        xOffset = FieldWidth * 0.5f;                                                                                                        // Offset the coordinates to distribute the spread
-        yOffset = FieldHeight * 0.5f;                                                                                                       // around the object's center
-
-        for (int i = 0; i < MaxStars; i++)
+        for (var i = 0; i < maxStars; i++)
         {
-            float randSize = Random.Range(1f - StarSizeRange, StarSizeRange + 1f);          // Randomize star size within parameters
-            float scaledColor = (true == Colorize) ? randSize - StarSizeRange : 1f;         // If coloration is desired, color based on size
+            // Randomize star size within parameters
+            var randSize = UnityEngine.Random.Range(1f - starSizeRange, starSizeRange + 1f);     
+            // If coloration is desired, color based on size
+            var scaledColor = (true == colorize) ? randSize - starSizeRange : 1f;    
 
-            Stars[i].position = GetRandomInRectangle(FieldWidth, FieldHeight) + transform.position;
-            Stars[i].startSize = StarSize * randSize;
-            Stars[i].startColor = new Color(1f, scaledColor, scaledColor, 1f);
+            _stars[i].position = GetRandomInRectangle(fieldWidth, fieldHeight) + transform.position;
+            _stars[i].startSize = starSize * randSize;
+            _stars[i].startColor = new Color(1f, scaledColor, scaledColor, 1f);
         }
-        Particles.SetParticles(Stars, Stars.Length);                                                                // Write data to the particle system
+        // Write data to the particle system
+        _particles.SetParticles(_stars, _stars.Length);                                                  
     }
 
-    void Update()
+    private void Update()
     {
-        for (int i = 0; i < MaxStars; i++)
+        for (var i = 0; i < maxStars; i++)
         {
-            Vector3 pos = Stars[i].position + transform.position;
+            var pos = _stars[i].position + transform.position;
 
-            if (pos.x < (theCamera.position.x - xOffset))
+            if (pos.x < (_theCamera.position.x - xOffset))
             {
-                pos.x += FieldWidth;
+                pos.x += fieldWidth;
             }
-            else if (pos.x > (theCamera.position.x + xOffset))
+            else if (pos.x > (_theCamera.position.x + xOffset))
             {
-                pos.x -= FieldWidth;
-            }
-
-            if (pos.y < (theCamera.position.y - yOffset))
-            {
-                pos.y += FieldHeight;
-            }
-            else if (pos.y > (theCamera.position.y + yOffset))
-            {
-                pos.y -= FieldHeight;
+                pos.x -= fieldWidth;
             }
 
-            Stars[i].position = pos - transform.position;
+            if (pos.y < (_theCamera.position.y - yOffset))
+            {
+                pos.y += fieldHeight;
+            }
+            else if (pos.y > (_theCamera.position.y + yOffset))
+            {
+                pos.y -= fieldHeight;
+            }
+
+            _stars[i].position = pos - transform.position;
         }
-        Particles.SetParticles(Stars, Stars.Length);
-
-        Vector3 newPos = theCamera.position * ParallaxFactor;                                                       // Caculate the position of the object
-        newPos.z = 0;                                                                                                                                       // Force Z-axis to zero, since we're in 2D
+        _particles.SetParticles(_stars, _stars.Length);
+        
+        // Calculate the position of the object
+        var newPos = _theCamera.position * parallaxFactor;  
+        // Force Z-axis to zero, since we're in 2D
+        newPos.z = 0;                                                                                                    
         transform.position = newPos;
 
     }
@@ -82,10 +89,10 @@ public class Starfield : MonoBehaviour
     //----------------------------------------------------------
     // Get a random value within a certain rectangle area
     //
-    Vector3 GetRandomInRectangle(float width, float height)
+    private Vector3 GetRandomInRectangle(float width, float height)
     {
-        float x = Random.Range(0, width);
-        float y = Random.Range(0, height);
+        var x = UnityEngine.Random.Range(0, width);
+        var y = UnityEngine.Random.Range(0, height);
         return new Vector3(x - xOffset, y - yOffset, 0);
     }
 }
