@@ -39,10 +39,8 @@ public class Animation : MonoBehaviour
             else if (frame >= sprites.Length)
                 frame = sprites.Length - 1;
         }
-        //Animate sprite with selected frame
-  
-            spr.sprite = sprites[frame];
-       
         
+        //Animate sprite with selected frame
+        spr.sprite = sprites[frame];
     }
 }
