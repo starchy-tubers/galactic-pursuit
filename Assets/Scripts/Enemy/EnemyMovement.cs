@@ -4,8 +4,6 @@ using UnityEngine;
 public class EnemyMovement : MonoBehaviour
 {
     private const float movementSpeed = 1f;
-    FixedScroll fixedScroll;
-
     private enum Direction { Left, Right, Up, Down };
     private Direction shipDirection;
     Vector3 startPosition;
@@ -13,7 +11,6 @@ public class EnemyMovement : MonoBehaviour
 
     private void Start()
     {
-        fixedScroll = (FixedScroll)FindObjectOfType(typeof(FixedScroll));
         shipDirection = Direction.Left;
         startPosition = transform.position;
     }
@@ -29,7 +26,6 @@ public class EnemyMovement : MonoBehaviour
 
     private void Update()
     {
-        transform.position = new Vector3(transform.position.x, transform.position.y + fixedScroll.theScrollSpeed, 1);
         switch (shipDirection)
         {
             case Direction.Left:
@@ -49,7 +45,7 @@ public class EnemyMovement : MonoBehaviour
                 {
                     shipDirection = Direction.Left;
                 }
-
+                
                 break;
             }
             case Direction.Up:

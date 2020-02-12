@@ -5,14 +5,13 @@ using UnityEngine;
 public class Animation : MonoBehaviour
 {
     public bool loop;
-    public float frameSeconds = 1;
+    public float frameSeconds = 5;
     //The file location of the sprites within the resources folder
     public string location;
     private SpriteRenderer spr;
     private Sprite[] sprites;
     private int frame = 0;
     private float deltaTime = 0;
-    public static bool paused;
 
     // Use this for initialization
     void Start()
@@ -22,7 +21,7 @@ public class Animation : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
         //Keep track of the time that has passed
         deltaTime += Time.deltaTime;
@@ -41,10 +40,9 @@ public class Animation : MonoBehaviour
                 frame = sprites.Length - 1;
         }
         //Animate sprite with selected frame
-        if (!paused) 
-        {
+  
             spr.sprite = sprites[frame];
-        }
+       
         
     }
 }

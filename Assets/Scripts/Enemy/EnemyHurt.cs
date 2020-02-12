@@ -18,7 +18,7 @@ public class EnemyHurt : MonoBehaviour
         if (collision.gameObject.CompareTag("ShipBullet"))
         {
             spriteRenderer.sprite = damaged;
-            Animation.paused = true;
+            // Animation.paused = true;
             StartCoroutine(SpriteDelay());
         }
     }
@@ -27,6 +27,6 @@ public class EnemyHurt : MonoBehaviour
     {
         yield return new WaitForSeconds(delayTime);
         spriteRenderer.sprite = notDamaged;
-        Animation.paused = false;
+        // Animation.paused = false;
     }
 }
