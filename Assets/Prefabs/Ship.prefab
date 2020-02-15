@@ -77,7 +77,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: de55a6334fb4ca843851235329e00556, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ShipBullet: {fileID: 4323674457895942769, guid: 27ad8272f71368146aa23cd14d6d0b79,
+  ShipBullet: {fileID: 7883844715219148956, guid: 33bd8b53f2a592f4a986137f6bcb5f2c,
     type: 3}
   delayTime: 0.2
   audioData: {fileID: 0}
@@ -93,6 +93,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4cfa0c2f90db043f19441a407437ee00, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  shipHealth: 3
+  healthBar3: {fileID: 21300000, guid: 3c0497ea84fda4891a1bcfe953602e00, type: 3}
+  healthBar2: {fileID: 21300000, guid: b3ea2352fd5e746a497f70c754308968, type: 3}
+  healthBar1: {fileID: 21300000, guid: a89bc6f821f404615973d598813ee34f, type: 3}
+  healthBar0: {fileID: 21300000, guid: fff168dd4463c4cce8896c38075cee46, type: 3}
 --- !u!114 &1572826561901213091
 MonoBehaviour:
   m_ObjectHideFlags: 0
