@@ -2,12 +2,14 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+// Script is broken.
 public class EnemyHurt : MonoBehaviour
 {
     private SpriteRenderer spriteRenderer;
     public Sprite notDamaged;
     public Sprite damaged;
     public float delayTime;
+    public Color m_NewColor;
     void Start()
     {
         spriteRenderer = GetComponent<SpriteRenderer>();
@@ -17,8 +19,6 @@ public class EnemyHurt : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("ShipBullet"))
         {
-            spriteRenderer.sprite = damaged;
-            // Animation.paused = true;
             StartCoroutine(SpriteDelay());
         }
     }
@@ -26,7 +26,5 @@ public class EnemyHurt : MonoBehaviour
     private IEnumerator SpriteDelay()
     {
         yield return new WaitForSeconds(delayTime);
-        spriteRenderer.sprite = notDamaged;
-        // Animation.paused = false;
     }
 }
