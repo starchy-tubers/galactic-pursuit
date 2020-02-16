@@ -4,10 +4,7 @@ using System.Collections;
 public class Ship : MonoBehaviour
 {
     public int shipHealth = 3;
-    public Sprite healthBar3;
-    public Sprite healthBar2;
-    public Sprite healthBar1;
-    public Sprite healthBar0;
+    public Sprite[] spriteList;
     private SpriteRenderer spriteRenderer;
     private void OnCollisionEnter2D(Collision2D collision)
     {
@@ -19,16 +16,16 @@ public class Ship : MonoBehaviour
             switch (shipHealth)
             {
                 case 3:
-                    spriteRenderer.sprite = healthBar3;
+                    spriteRenderer.sprite = spriteList[0];
                     break;
                 case 2:
-                    spriteRenderer.sprite = healthBar2;
+                    spriteRenderer.sprite = spriteList[1];
                     break;
                 case 1:
-                    spriteRenderer.sprite = healthBar1;
+                    spriteRenderer.sprite = spriteList[2];
                     break;
                 default:
-                    spriteRenderer.sprite = healthBar0;
+                    spriteRenderer.sprite = spriteList[3];
                     break;
             }
 

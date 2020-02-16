@@ -94,10 +94,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   shipHealth: 3
-  healthBar3: {fileID: 21300000, guid: 3c0497ea84fda4891a1bcfe953602e00, type: 3}
-  healthBar2: {fileID: 21300000, guid: b3ea2352fd5e746a497f70c754308968, type: 3}
-  healthBar1: {fileID: 21300000, guid: a89bc6f821f404615973d598813ee34f, type: 3}
-  healthBar0: {fileID: 21300000, guid: fff168dd4463c4cce8896c38075cee46, type: 3}
+  spriteList:
+  - {fileID: 21300000, guid: 3c0497ea84fda4891a1bcfe953602e00, type: 3}
+  - {fileID: 21300000, guid: b3ea2352fd5e746a497f70c754308968, type: 3}
+  - {fileID: 21300000, guid: a89bc6f821f404615973d598813ee34f, type: 3}
+  - {fileID: 21300000, guid: fff168dd4463c4cce8896c38075cee46, type: 3}
 --- !u!114 &1572826561901213091
 MonoBehaviour:
   m_ObjectHideFlags: 0
