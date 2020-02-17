@@ -11,7 +11,6 @@ public class ShipBullet : MonoBehaviour
     private void Start()
     {
         rb = GetComponent<Rigidbody2D>();
-        Physics2D.IgnoreLayerCollision(1, 2);
     }
     
     private void Update()
@@ -21,7 +20,7 @@ public class ShipBullet : MonoBehaviour
             
     private void OnCollisionEnter2D(Collision2D col)
     {
-        if (col.gameObject.CompareTag("RedEnemy"))
+        if (col.gameObject.CompareTag("GreenEnemy"))
         {
             Destroy(gameObject);
         }

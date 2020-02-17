@@ -10,6 +10,7 @@ TagManager:
   - RedEnemyHurt
   - ShipBullet
   - HealthBar
+  - GreenEnemy
   layers:
   - Default
   - TransparentFX

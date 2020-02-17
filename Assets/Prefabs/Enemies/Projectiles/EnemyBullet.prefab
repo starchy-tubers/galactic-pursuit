@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 3275989313541815273}
   - component: {fileID: 3050086841071550419}
   - component: {fileID: 6085868586109845679}
-  m_Layer: 1
+  m_Layer: 0
   m_Name: EnemyBullet
   m_TagString: EnemyBullet
   m_Icon: {fileID: 0}
@@ -105,9 +105,9 @@ Rigidbody2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4397074148663674926}
-  m_BodyType: 0
+  m_BodyType: 1
   m_Simulated: 1
-  m_UseFullKinematicContacts: 0
+  m_UseFullKinematicContacts: 1
   m_UseAutoMass: 0
   m_Mass: 0.0001
   m_LinearDrag: 0

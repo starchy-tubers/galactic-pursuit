@@ -13,9 +13,7 @@ public class Ship : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D col)
     {
-        spriteRenderer = GameObject.FindWithTag("HealthBar").GetComponent<SpriteRenderer>();
-
-        if (col.gameObject.CompareTag("EnemyBullet"))
+        if (col.gameObject.CompareTag("EnemyBullet") || col.gameObject.CompareTag("GreenEnemy"))
         {
             shipHealth -= 1;
 

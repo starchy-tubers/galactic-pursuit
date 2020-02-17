@@ -5,26 +5,16 @@ using UnityEngine;
 // Script is broken.
 public class EnemyHurt : MonoBehaviour
 {
-    private SpriteRenderer spriteRenderer;
-    public Sprite notDamaged;
-    public Sprite damaged;
-    public float delayTime;
-    public Color m_NewColor;
-    void Start()
+    public int enemyHealth = 5;
+    private void OnCollisionEnter2D(Collision2D col)
     {
-        spriteRenderer = GetComponent<SpriteRenderer>();
-    }
-
-    private void OnCollisionEnter2D(Collision2D collision)
-    {
-        if (collision.gameObject.CompareTag("ShipBullet"))
+        if (col.gameObject.CompareTag("ShipBullet")) 
         {
-            StartCoroutine(SpriteDelay());
+            enemyHealth -= 1;
+            if (enemyHealth == 0)
+            {
+                Destroy(gameObject);
+            }
         }
-    }
-
-    private IEnumerator SpriteDelay()
-    {
-        yield return new WaitForSeconds(delayTime);
     }
 }
