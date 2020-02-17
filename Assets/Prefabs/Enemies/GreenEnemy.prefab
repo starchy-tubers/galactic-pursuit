@@ -89,10 +89,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 05481ea7100f4784eb598503d488dc15, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  notDamaged: {fileID: 21300000, guid: b090d9a29404a4c97a86179b6e534f49, type: 3}
-  damaged: {fileID: 21300000, guid: db7ff668e4173438a95a0bc99ac6effb, type: 3}
-  delayTime: 0.1
-  m_NewColor: {r: 1, g: 1, b: 1, a: 0}
+  enemyHealth: 5
 --- !u!212 &3074379427458818041
 SpriteRenderer:
   m_ObjectHideFlags: 0
