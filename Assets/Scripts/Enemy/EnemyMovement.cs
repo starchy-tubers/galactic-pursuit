@@ -15,15 +15,6 @@ public class EnemyMovement : MonoBehaviour
         startPosition = transform.position;
     }
 
-    private void OnCollisionEnter2D()
-    {
-        enemyHealth -= 1;
-        if (enemyHealth == 0)
-        {
-            Destroy(gameObject);
-        }
-    }
-
     private void Update()
     {
         switch (shipDirection)

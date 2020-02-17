@@ -23,7 +23,7 @@ public class PlayerShoot : MonoBehaviour
     private IEnumerator NoFire()
     {
         yield return new WaitForSeconds(delayTime);
-        Instantiate(ShipBullet, transform.position, transform.rotation);
+        Instantiate(ShipBullet, new Vector3(transform.position.x, transform.position.y + 0.5f), transform.rotation);
         audioData.Play(0);
         canShoot = true;
     }
