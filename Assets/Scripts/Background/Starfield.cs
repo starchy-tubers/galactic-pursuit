@@ -1,9 +1,5 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.Assertions;
-using UnityEngine.Serialization;
-
 
 public class Starfield : MonoBehaviour
 {
@@ -76,6 +72,7 @@ public class Starfield : MonoBehaviour
             _stars[i].position = pos - transform.position;
         }
         _particles.SetParticles(_stars, _stars.Length);
+        
         
         // Calculate the position of the object
         var newPos = _theCamera.position * parallaxFactor;  

@@ -15,6 +15,18 @@ public class EnemyMovement : MonoBehaviour
         startPosition = transform.position;
     }
 
+    private void OnCollisionEnter2D(Collision2D col)
+    {
+        if (col.gameObject.CompareTag("ShipBullet")) 
+        {
+            enemyHealth -= 1;
+            if (enemyHealth == 0)
+            {
+                Destroy(gameObject);
+            }
+        }
+    }
+
     private void Update()
     {
         switch (shipDirection)
