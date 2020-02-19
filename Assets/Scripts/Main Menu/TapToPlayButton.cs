@@ -8,7 +8,7 @@ public class TapToPlayButton : MonoBehaviour
     {
         if(Input.GetMouseButton(0)) 
         {
-            SceneManager.LoadSceneAsync("Level1");
+            // SceneManager.LoadSceneAsync("Level1");
         } 
     }
 }
