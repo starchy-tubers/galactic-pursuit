@@ -43,7 +43,7 @@ public class AsteroidAppear : MonoBehaviour
 
     private IEnumerator noAppear()
     {
-        yield return new WaitForSeconds((float)RandomHandler.GetRandomNumber2());
+        yield return new WaitForSeconds((float)RandomHandler.AsteroidRandomAppear());
         Instantiate(Asteroid, new Vector2(RandomNum, 5), transform.rotation);
         canAppear = true;
     }
