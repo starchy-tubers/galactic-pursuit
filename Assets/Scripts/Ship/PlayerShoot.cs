@@ -19,6 +19,17 @@ public class PlayerShoot : MonoBehaviour
         canShoot = false;
         StartCoroutine(NoFire());
     }
+    private void OnCollisionEnter2D(Collision2D col)
+    {
+        if (col.gameObject.CompareTag("BulletsPowerUp"))
+        {
+            delayTime = 0.1f;
+        }
+        if (col.gameObject.CompareTag("EnemyBullet") || col.gameObject.CompareTag("GreenEnemy") || col.gameObject.CompareTag("Asteroid"))
+        {
+            delayTime = 0.25f;
+        }
+    }
 
     private IEnumerator NoFire()
     {
