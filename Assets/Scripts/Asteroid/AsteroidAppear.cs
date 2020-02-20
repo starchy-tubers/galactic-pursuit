@@ -23,7 +23,7 @@ public class AsteroidAppear : MonoBehaviour
         {
             asteroidHealth -= 1;
             if (asteroidHealth == 0) {
-            Destroy(gameObject);
+                Destroy(gameObject);
                 if (Random.value < 0.25)
                 {
                     Instantiate(BulletsPowerUp, transform.position, transform.rotation);
