@@ -22,14 +22,15 @@ public class AsteroidAppear : MonoBehaviour
         if (col.gameObject.CompareTag("ShipBullet"))
         {
             asteroidHealth -= 1;
-            if (asteroidHealth == 0) {
+            if (asteroidHealth == 0)
+            {
                 Destroy(gameObject);
                 if (Random.value < 0.25)
                 {
                     Instantiate(BulletsPowerUp, transform.position, transform.rotation);
                 }
-          }
-       }
+            }
+        }
     }
     private void Update()
     {
