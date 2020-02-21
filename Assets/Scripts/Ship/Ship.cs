@@ -5,6 +5,7 @@ public class Ship : MonoBehaviour
     public int shipHealth = 3;
     public Sprite[] spriteList;
     private SpriteRenderer spriteRenderer;
+   
 
     private void Start() 
     {
@@ -13,7 +14,7 @@ public class Ship : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D col)
     {
-        if (col.gameObject.CompareTag("EnemyBullet") || col.gameObject.CompareTag("GreenEnemy"))
+        if (col.gameObject.CompareTag("EnemyBullet") || col.gameObject.CompareTag("GreenEnemy") || col.gameObject.CompareTag("Asteroid"))
         {
             shipHealth -= 1;
 
@@ -33,10 +34,13 @@ public class Ship : MonoBehaviour
                     break;
             }
 
+
             if (shipHealth == 0) {
 
                 Destroy(gameObject);
             }
         }
     }
+
+
 }

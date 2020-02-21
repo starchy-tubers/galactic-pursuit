@@ -16,7 +16,7 @@ public class EnemyShoot : MonoBehaviour
 
     private IEnumerator NoFire()
     {
-        yield return new WaitForSeconds((float)RandomHandler.GetRandomNumber());
+        yield return new WaitForSeconds((float)RandomHandler.EnemyRandomShoot());
         Instantiate(EnemyBullet, transform.position, transform.rotation);
         canShoot = true;
     }
