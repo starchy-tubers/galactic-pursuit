@@ -12,6 +12,7 @@ public class AsteroidAppear : MonoBehaviour
     public float velY = -1f;
     Rigidbody2D rb;
     int asteroidHealth = 10;
+
     private void Start()
     {
         rb = GetComponent<Rigidbody2D>();
@@ -32,6 +33,7 @@ public class AsteroidAppear : MonoBehaviour
             }
         }
     }
+
     private void Update()
     {
         RandomNum = Random.Range(-2.4f, 2.4f);
@@ -47,6 +49,7 @@ public class AsteroidAppear : MonoBehaviour
         Instantiate(Asteroid, new Vector2(RandomNum, 5), transform.rotation);
         canAppear = true;
     }
+    
     private void OnBecameInvisible()
     {
         Destroy(gameObject);
