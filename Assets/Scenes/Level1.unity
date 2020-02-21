@@ -131,12 +131,12 @@ PrefabInstance:
     - target: {fileID: 2204733430953930193, guid: 8324ea70b7df84c05889355f61283c40,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -2.2
+      value: -4.8
       objectReference: {fileID: 0}
     - target: {fileID: 2204733430953930193, guid: 8324ea70b7df84c05889355f61283c40,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 4.7
+      value: 9.7
       objectReference: {fileID: 0}
     - target: {fileID: 2204733430953930193, guid: 8324ea70b7df84c05889355f61283c40,
         type: 3}
@@ -1911,19 +1911,38 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1940043820, guid: dfdefc8888c4d47cabf6f5b956650b9f, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 1940043821, guid: dfdefc8888c4d47cabf6f5b956650b9f, type: 3}
       propertyPath: InitialModule.gravityModifier.scalar
       value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 5647144013856306688, guid: dfdefc8888c4d47cabf6f5b956650b9f,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 5647144013856306689, guid: dfdefc8888c4d47cabf6f5b956650b9f,
         type: 3}
       propertyPath: InitialModule.gravityModifier.scalar
       value: 0.5
       objectReference: {fileID: 0}
+    - target: {fileID: 5647144014065235806, guid: dfdefc8888c4d47cabf6f5b956650b9f,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 5647144014065235807, guid: dfdefc8888c4d47cabf6f5b956650b9f,
         type: 3}
       propertyPath: InitialModule.gravityModifier.scalar
       value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 5647144014255697690, guid: dfdefc8888c4d47cabf6f5b956650b9f,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 5647144014255697691, guid: dfdefc8888c4d47cabf6f5b956650b9f,
         type: 3}
@@ -1939,6 +1958,11 @@ PrefabInstance:
         type: 3}
       propertyPath: InitialModule.gravityModifier.scalar
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5647144014806121008, guid: dfdefc8888c4d47cabf6f5b956650b9f,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 5647144014806121009, guid: dfdefc8888c4d47cabf6f5b956650b9f,
         type: 3}
@@ -1964,6 +1988,11 @@ PrefabInstance:
         type: 3}
       propertyPath: InitialModule.gravityModifier.scalar
       value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 5647144015728958139, guid: dfdefc8888c4d47cabf6f5b956650b9f,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 6903795517002604939, guid: dfdefc8888c4d47cabf6f5b956650b9f,
         type: 3}
@@ -2037,7 +2066,7 @@ PrefabInstance:
     - target: {fileID: 379326074219856466, guid: a0eecd134cd63489a9f8cebd9092c9e2,
         type: 3}
       propertyPath: m_UpscaleRT
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 379326074219856466, guid: a0eecd134cd63489a9f8cebd9092c9e2,
         type: 3}
