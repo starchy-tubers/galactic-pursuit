@@ -41,5 +41,4 @@ public class AsteroidMovement : MonoBehaviour
     {
         Destroy(gameObject);
     }
-
 }

@@ -21,7 +21,4 @@ public class AsteroidAppear : MonoBehaviour
         Instantiate(Asteroid, new Vector2(RandomNum, 5), transform.rotation);
         canAppear = true;
     }
-
-    
-
 }
