@@ -22,9 +22,6 @@ public class AsteroidAppear : MonoBehaviour
         canAppear = true;
     }
 
-    private void OnBecameInvisible()
-    {
-        Destroy(gameObject);
-    }
+    
 
 }
