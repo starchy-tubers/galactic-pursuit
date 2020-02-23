@@ -29,9 +29,6 @@ TextureImporter:
   - first:
       213: 3944407754453173195
     second: ship_8
-  - first:
-      213: -2760468006007017277
-    second: ship_9
   externalObjects: {}
   serializedVersion: 10
   mipmaps:
@@ -144,7 +141,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 0
-        y: 72
+        y: 48
         width: 24
         height: 24
       alignment: 0
@@ -165,7 +162,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 24
-        y: 72
+        y: 48
         width: 24
         height: 24
       alignment: 0
@@ -186,7 +183,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 48
-        y: 72
+        y: 48
         width: 24
         height: 24
       alignment: 0
@@ -207,7 +204,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 0
-        y: 48
+        y: 24
         width: 24
         height: 24
       alignment: 0
@@ -228,7 +225,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 24
-        y: 48
+        y: 24
         width: 24
         height: 24
       alignment: 0
@@ -249,7 +246,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 48
-        y: 48
+        y: 24
         width: 24
         height: 24
       alignment: 0
@@ -270,7 +267,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 0
-        y: 24
+        y: 0
         width: 24
         height: 24
       alignment: 0
@@ -291,7 +288,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 24
-        y: 24
+        y: 0
         width: 24
         height: 24
       alignment: 0
@@ -312,7 +309,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 48
-        y: 24
+        y: 0
         width: 24
         height: 24
       alignment: 0
@@ -324,27 +321,6 @@ TextureImporter:
       bones: []
       spriteID: bc34a7d44f95db630800000000000000
       internalID: 3944407754453173195
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: ship_9
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 0
-        width: 24
-        height: 24
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 3c0fe1069f8d0b9d0800000000000000
-      internalID: -2760468006007017277
       vertices: []
       indices: 
       edges: []
