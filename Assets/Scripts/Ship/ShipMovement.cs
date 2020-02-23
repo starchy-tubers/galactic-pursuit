@@ -17,17 +17,30 @@ public class ShipMovement : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetKeyDown("left"))
+        if (Input.GetKey("left") && canDoAction)
         {
             moveLeft = true;
         }
-        if (Input.GetKeyDown("right"))
+        if (Input.GetKey("right") && canDoAction)
         {
             moveRight = true;
         }
 
+        foreach (Touch touch in Input.touches)
+        {
+            if (touch.position.x < Screen.width / 2)
+            {
+                moveLeft = true;
+            }
+            else if (touch.position.x > Screen.width / 2)
+            {
+                moveRight = true;
+            }
+        }
+
         if (moveLeft)
         {
+            canDoAction = false;
             if (!locked && transform.position.x != -3)
             {
                 target.x = transform.position.x - 2;
@@ -40,11 +53,13 @@ public class ShipMovement : MonoBehaviour
             {
                 moveLeft = false;
                 locked = false;
+                canDoAction = true;
             }
         }
 
         if (moveRight)
         {
+            canDoAction = false;
             if (!locked && transform.position.x != 3)
             {
                 target.x = transform.position.x + 2;
@@ -57,6 +72,7 @@ public class ShipMovement : MonoBehaviour
             {
                 moveRight = false;
                 locked = false;
+                canDoAction = true;
             }
         }
     }
