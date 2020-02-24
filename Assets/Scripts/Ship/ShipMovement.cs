@@ -17,24 +17,30 @@ public class ShipMovement : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetKey("left") && canDoAction)
+        if (Input.GetKeyDown("left") && canDoAction)
         {
             moveLeft = true;
         }
-        if (Input.GetKey("right") && canDoAction)
+        if (Input.GetKeyDown("right") && canDoAction)
         {
             moveRight = true;
         }
 
-        foreach (Touch touch in Input.touches)
+        if (Input.touchCount > 0)
         {
-            if (touch.position.x < Screen.width / 2)
+            switch (Input.GetTouch(0).phase)
             {
-                moveLeft = true;
-            }
-            else if (touch.position.x > Screen.width / 2)
-            {
-                moveRight = true;
+                case TouchPhase.Began:
+                    if (Input.GetTouch(0).position.x < Screen.width / 2)
+                    {
+                        moveLeft = true;
+                    }
+                    else if (Input.GetTouch(0).position.x > Screen.width / 2)
+                    {
+                        moveRight = true;
+                    }
+                    break;
+
             }
         }
 
