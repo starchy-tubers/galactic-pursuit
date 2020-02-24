@@ -12,10 +12,10 @@ public class AsteroidAppear : MonoBehaviour
         RandomNum = Random.Range(-2.4f, 2.4f);
         if (!canAppear) return;
         canAppear = false;
-        StartCoroutine(noAppear());
+        StartCoroutine(NoAppear());
     }
 
-    private IEnumerator noAppear()
+    private IEnumerator NoAppear()
     {
         yield return new WaitForSeconds((float)RandomHandler.AsteroidRandomAppear());
         Instantiate(Asteroid, new Vector2(RandomNum, 5), transform.rotation);

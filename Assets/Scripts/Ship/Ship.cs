@@ -44,9 +44,9 @@ public class Ship : MonoBehaviour
     void Damage()
     {
         shipHealth -= 1;
-        StartCoroutine(noDamage());
+        StartCoroutine(NoDamage());
     }
-    private IEnumerator noDamage()
+    private IEnumerator NoDamage()
     {
         yield return new WaitForSeconds(2.0f);
         canDamage = true;
