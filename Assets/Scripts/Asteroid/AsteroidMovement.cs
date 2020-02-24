@@ -37,6 +37,7 @@ public class AsteroidMovement : MonoBehaviour
             }
         }
     }
+
     private void OnBecameInvisible()
     {
         Destroy(gameObject);

@@ -5,9 +5,8 @@ public class Ship : MonoBehaviour
     public int shipHealth = 3;
     public Sprite[] spriteList;
     private SpriteRenderer spriteRenderer;
-   
 
-    private void Start() 
+    private void Start()
     {
         // spriteRenderer = GameObject.FindWithTag("HealthBar").GetComponent<SpriteRenderer>();
     }
@@ -35,7 +34,8 @@ public class Ship : MonoBehaviour
             }
 
 
-            if (shipHealth == 0) {
+            if (shipHealth == 0)
+            {
 
                 Destroy(gameObject);
             }
