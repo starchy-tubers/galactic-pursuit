@@ -9,7 +9,7 @@ public class Ship : MonoBehaviour
 
     private void Start() 
     {
-        spriteRenderer = GameObject.FindWithTag("HealthBar").GetComponent<SpriteRenderer>();
+        // spriteRenderer = GameObject.FindWithTag("HealthBar").GetComponent<SpriteRenderer>();
     }
 
     private void OnCollisionEnter2D(Collision2D col)
