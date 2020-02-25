@@ -5,11 +5,11 @@ public class Ship : MonoBehaviour
     public int shipHealth = 3;
     public Sprite[] spriteList;
     private SpriteRenderer spriteRenderer;
-   
 
-    private void Start() 
+
+    private void Start()
     {
-        // spriteRenderer = GameObject.FindWithTag("HealthBar").GetComponent<SpriteRenderer>();
+        spriteRenderer = GameObject.FindWithTag("HealthBar").GetComponent<SpriteRenderer>();
     }
 
     private void OnCollisionEnter2D(Collision2D col)
@@ -35,7 +35,8 @@ public class Ship : MonoBehaviour
             }
 
 
-            if (shipHealth == 0) {
+            if (shipHealth == 0)
+            {
 
                 Destroy(gameObject);
             }

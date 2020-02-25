@@ -9,9 +9,16 @@ public class ShipMovement : MonoBehaviour
     Vector2 pos;
     Vector2 target;
     float speed = 15f;
+    Camera camera;
+    float cameraWidth;
+    float movementDistance;
+    float numberOfColumns = 5;
 
     void Start()
     {
+        camera = Camera.main;
+        cameraWidth = camera.aspect * camera.orthographicSize * 2;
+        movementDistance = cameraWidth / numberOfColumns;
         pos = transform.position;
     }
 
@@ -40,16 +47,16 @@ public class ShipMovement : MonoBehaviour
                         moveRight = true;
                     }
                     break;
-
             }
         }
 
         if (moveLeft)
         {
             canDoAction = false;
-            if (!locked && transform.position.x != -3)
+
+            if (!locked && transform.position.x > -3) //TODO: Make "3" a calculated value?
             {
-                target.x = transform.position.x - 2;
+                target.x = transform.position.x - movementDistance;
                 locked = true;
             }
 
@@ -66,9 +73,9 @@ public class ShipMovement : MonoBehaviour
         if (moveRight)
         {
             canDoAction = false;
-            if (!locked && transform.position.x != 3)
+            if (!locked && transform.position.x < 3)
             {
-                target.x = transform.position.x + 2;
+                target.x = transform.position.x + movementDistance;
                 locked = true;
             }
 
