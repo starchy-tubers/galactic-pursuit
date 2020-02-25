@@ -1,11 +1,12 @@
 ﻿using UnityEngine;
-
+using System.Collections;
+using System.Collections.Generic;
 public class Ship : MonoBehaviour
 {
     public int shipHealth = 3;
     public Sprite[] spriteList;
     private SpriteRenderer spriteRenderer;
-
+    bool canDamage = true;
 
     private void Start()
     {
@@ -16,8 +17,9 @@ public class Ship : MonoBehaviour
     {
         if (col.gameObject.CompareTag("EnemyBullet") || col.gameObject.CompareTag("GreenEnemy") || col.gameObject.CompareTag("Asteroid"))
         {
-            shipHealth -= 1;
-
+            if (!canDamage) return;
+            Damage();
+            canDamage = false;
             switch (shipHealth)
             {
                 case 3:
@@ -34,7 +36,6 @@ public class Ship : MonoBehaviour
                     break;
             }
 
-
             if (shipHealth == 0)
             {
 
@@ -42,6 +43,15 @@ public class Ship : MonoBehaviour
             }
         }
     }
-
+    void Damage()
+    {
+        shipHealth -= 1;
+        StartCoroutine(NoDamage());
+    }
+    private IEnumerator NoDamage()
+    {
+        yield return new WaitForSeconds(2.0f);
+        canDamage = true;
+    }
 
 }
