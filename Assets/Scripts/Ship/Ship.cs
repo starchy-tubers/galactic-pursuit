@@ -35,8 +35,10 @@ public class Ship : MonoBehaviour
                     spriteRenderer.sprite = spriteList[0];
                     break;
             }
+
             if (shipHealth == 0)
             {
+
                 Destroy(gameObject);
             }
         }
