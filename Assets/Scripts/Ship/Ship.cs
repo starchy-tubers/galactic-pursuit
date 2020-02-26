@@ -50,7 +50,7 @@ public class Ship : MonoBehaviour
     }
     private IEnumerator NoDamage()
     {
-        yield return new WaitForSeconds(2.0f);
+        yield return new WaitForSeconds(1.0f);
         canDamage = true;
     }
 
