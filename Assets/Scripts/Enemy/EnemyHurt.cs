@@ -17,7 +17,6 @@ public class EnemyHurt : MonoBehaviour
             enemyHealth -= 1;
             animator.SetTrigger("Damaged");
 
-
             if (enemyHealth == 0)
             {
                 Destroy(gameObject);
