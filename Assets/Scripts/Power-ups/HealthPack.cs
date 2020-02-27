@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class BulletsPowerUp : MonoBehaviour
+public class HealthPack : MonoBehaviour
 {
     Rigidbody2D rb;
     private const float velX = 0;

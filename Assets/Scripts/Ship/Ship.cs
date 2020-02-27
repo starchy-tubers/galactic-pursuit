@@ -4,7 +4,7 @@ using System.Collections.Generic;
 public class Ship : MonoBehaviour
 {
     [SerializeField]
-    int shipHealth = 10;
+    public int shipHealth = 10;
     [SerializeField]
     Sprite[] healthBarSpriteArray;
     private SpriteRenderer spriteRenderer;
@@ -26,48 +26,52 @@ public class Ship : MonoBehaviour
             Debug.Log(shipHealth);
             // canDamage = false;
             // TODO: Probably a smarter way to do this
-            switch (shipHealth)
-            {
-                case 10:
-                    spriteRenderer.sprite = healthBarSpriteArray[10];
-                    break;
-                case 9:
-                    spriteRenderer.sprite = healthBarSpriteArray[9];
-                    break;
-                case 8:
-                    spriteRenderer.sprite = healthBarSpriteArray[8];
-                    break;
-                case 7:
-                    spriteRenderer.sprite = healthBarSpriteArray[7];
-                    break;
-                case 6:
-                    spriteRenderer.sprite = healthBarSpriteArray[6];
-                    break;
-                case 5:
-                    spriteRenderer.sprite = healthBarSpriteArray[5];
-                    break;
-                case 4:
-                    spriteRenderer.sprite = healthBarSpriteArray[4];
-                    break;
-                case 3:
-                    spriteRenderer.sprite = healthBarSpriteArray[3];
-                    break;
-                case 2:
-                    spriteRenderer.sprite = healthBarSpriteArray[2];
-                    break;
-                case 1:
-                    spriteRenderer.sprite = healthBarSpriteArray[1];
-                    break;
-                default:
-                    spriteRenderer.sprite = healthBarSpriteArray[0];
-                    break;
-            }
 
             if (shipHealth == 0)
             {
 
                 Destroy(gameObject);
             }
+        }
+        if (col.gameObject.CompareTag("HealthPack"))
+        {
+            shipHealth++;
+        }
+        switch (shipHealth)
+        {
+            case 10:
+                spriteRenderer.sprite = healthBarSpriteArray[10];
+                break;
+            case 9:
+                spriteRenderer.sprite = healthBarSpriteArray[9];
+                break;
+            case 8:
+                spriteRenderer.sprite = healthBarSpriteArray[8];
+                break;
+            case 7:
+                spriteRenderer.sprite = healthBarSpriteArray[7];
+                break;
+            case 6:
+                spriteRenderer.sprite = healthBarSpriteArray[6];
+                break;
+            case 5:
+                spriteRenderer.sprite = healthBarSpriteArray[5];
+                break;
+            case 4:
+                spriteRenderer.sprite = healthBarSpriteArray[4];
+                break;
+            case 3:
+                spriteRenderer.sprite = healthBarSpriteArray[3];
+                break;
+            case 2:
+                spriteRenderer.sprite = healthBarSpriteArray[2];
+                break;
+            case 1:
+                spriteRenderer.sprite = healthBarSpriteArray[1];
+                break;
+            default:
+                spriteRenderer.sprite = healthBarSpriteArray[0];
+                break;
         }
     }
     void Damage()
