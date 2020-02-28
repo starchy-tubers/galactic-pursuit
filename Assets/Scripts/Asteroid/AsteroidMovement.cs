@@ -11,13 +11,17 @@ public class AsteroidMovement : MonoBehaviour
     private const float velX = 0;
     public float velY = -1f;
     Rigidbody2D rb;
-    int asteroidHealth = 1;
+    int asteroidHealth = 10;
     bool canAppear = true;
+    float delayPowerUp = 1.0f;
+    float bulletsPowerUpChance = 0.25f;
+    float healthPowerUpChance = 0.25f;
 
     private void Start()
     {
         rb = GetComponent<Rigidbody2D>();
     }
+
     private void Update()
     {
         rb.velocity = new Vector2(velX, velY);
@@ -33,13 +37,13 @@ public class AsteroidMovement : MonoBehaviour
             {
                 Destroy(gameObject);
 
-                if (Random.Range(0.00f, 1.00f) < 0.25)
+                if (Random.Range(0.00f, 1.00f) < bulletsPowerUpChance)
                 {
                     Instantiate(BulletsPowerUp, transform.position, transform.rotation);
                     canAppear = false;
                     StartCoroutine(NoAppear());
                 }
-                if (Random.Range(1.00f, 2.00f) < 1.10 && shipHealth < 10 && canAppear)
+                if (Random.Range(0.00f, 1.00f) < healthPowerUpChance && shipHealth < 10 && canAppear)
                 {
                     Instantiate(HealthPowerUp, transform.position, transform.rotation);
                 }
@@ -50,7 +54,7 @@ public class AsteroidMovement : MonoBehaviour
 
     private IEnumerator NoAppear()
     {
-        yield return new WaitForSeconds(1.0f);
+        yield return new WaitForSeconds(delayPowerUp);
         canAppear = true;
     }
 
