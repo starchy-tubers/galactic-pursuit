@@ -13,7 +13,7 @@ public class AsteroidMovement : MonoBehaviour
     Rigidbody2D rb;
     int asteroidHealth = 10;
     bool canAppear = true;
-    float delayPowerUp = 1.0f;
+    float powerUpDelay = 1.0f;
     float bulletsPowerUpChance = 0.25f;
     float healthPowerUpChance = 0.25f;
 
@@ -54,7 +54,7 @@ public class AsteroidMovement : MonoBehaviour
 
     private IEnumerator NoAppear()
     {
-        yield return new WaitForSeconds(delayPowerUp);
+        yield return new WaitForSeconds(powerUpDelay);
         canAppear = true;
     }
 
