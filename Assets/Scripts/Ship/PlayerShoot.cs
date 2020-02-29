@@ -4,7 +4,7 @@ using UnityEngine;
 public class PlayerShoot : MonoBehaviour
 {
     public GameObject ShipBullet;
-    public float delayTime = 0.25f;
+    public float delayTime = 0.20f;
     bool canShoot = true;
     public AudioSource audioData;
 
@@ -27,7 +27,7 @@ public class PlayerShoot : MonoBehaviour
         }
         if (col.gameObject.CompareTag("EnemyBullet") || col.gameObject.CompareTag("GreenEnemy") || col.gameObject.CompareTag("Asteroid"))
         {
-            delayTime = 0.25f;
+            delayTime = 0.20f;
         }
     }
 
