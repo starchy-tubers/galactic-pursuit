@@ -9,7 +9,7 @@ public class AsteroidMovement : MonoBehaviour
 
     float RandomNum;
     private const float velX = 0;
-    public float velY = -1f;
+    public float velY = -3f;
     Rigidbody2D rb;
     int asteroidHealth = 10;
 
