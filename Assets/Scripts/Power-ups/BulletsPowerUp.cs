@@ -6,7 +6,7 @@ public class BulletsPowerUp : MonoBehaviour
 {
     Rigidbody2D rb;
     private const float velX = 0;
-    public float velY = -1f;
+    public float velY = -3f;
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
@@ -19,7 +19,8 @@ public class BulletsPowerUp : MonoBehaviour
     }
     private void OnCollisionEnter2D(Collision2D col)
     {
-        if (col.gameObject.CompareTag("Ship")) {
+        if (col.gameObject.CompareTag("Ship"))
+        {
             Destroy(gameObject);
         }
     }
