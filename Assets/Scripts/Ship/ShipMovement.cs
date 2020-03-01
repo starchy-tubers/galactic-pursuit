@@ -20,7 +20,7 @@ public class ShipMovement : MonoBehaviour
         cameraWidth = camera.aspect * camera.orthographicSize * 2;
         movementDistance = cameraWidth / numberOfColumns;
         position = transform.position;
-        target.y = transform.position.y + 3.5f;
+        target.y = -5.5f;
     }
 
     void Update()
