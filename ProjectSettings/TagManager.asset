@@ -11,8 +11,9 @@ TagManager:
   - ShipBullet
   - HealthBar
   - GreenEnemy
-  - Asteroid
   - BulletsPowerUp
+  - Asteroid
+  - HealthPack
   layers:
   - Default
   - TransparentFX
@@ -55,7 +56,4 @@ TagManager:
     locked: 0
   - name: Ship
     uniqueID: 2388801357
-    locked: 0
-  - name: Asteroid
-    uniqueID: 2070727723
     locked: 0
