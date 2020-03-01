@@ -1,10 +1,10 @@
 ﻿using System.Collections;
 using UnityEngine;
 
-public class PlayerShoot : MonoBehaviour
+public class ShipShoot : MonoBehaviour
 {
-    public GameObject ShipBullet;
-    public float delayTime = 0.20f;
+    public GameObject ShipLaser;
+    public float shootDelayTime = 0.10f;
     bool canShoot = true;
     public AudioSource audioData;
 
@@ -23,18 +23,18 @@ public class PlayerShoot : MonoBehaviour
     {
         if (col.gameObject.CompareTag("BulletsPowerUp"))
         {
-            delayTime = 0.1f;
+            shootDelayTime = 0.1f;
         }
         if (col.gameObject.CompareTag("EnemyBullet") || col.gameObject.CompareTag("GreenEnemy") || col.gameObject.CompareTag("Asteroid"))
         {
-            delayTime = 0.20f;
+            shootDelayTime = 0.20f;
         }
     }
 
     private IEnumerator NoFire()
     {
-        yield return new WaitForSeconds(delayTime);
-        Instantiate(ShipBullet, new Vector3(transform.position.x, transform.position.y + 0.5f), transform.rotation);
+        yield return new WaitForSeconds(shootDelayTime);
+        Instantiate(ShipLaser, new Vector3(transform.position.x, transform.position.y + 0.5f), transform.rotation);
         audioData.Play(0);
         canShoot = true;
     }

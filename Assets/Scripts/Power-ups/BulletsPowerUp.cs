@@ -6,7 +6,7 @@ public class BulletsPowerUp : MonoBehaviour
 {
     Rigidbody2D rb;
     private const float velX = 0;
-    public float velY = -1f;
+    public float velY = -3f;
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
