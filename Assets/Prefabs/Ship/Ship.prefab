@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6857071572901219995}
   - component: {fileID: 6857071572901219994}
-  - component: {fileID: 989494029535368993}
+  - component: {fileID: 2387169928836676703}
   - component: {fileID: -7501108423192640079}
   - component: {fileID: 1366944655}
   - component: {fileID: 6857071572901219992}
@@ -52,7 +52,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2c7f08e046fe9f04e9a78279e18a4f8d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &989494029535368993
+--- !u!114 &2387169928836676703
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -64,9 +64,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: de55a6334fb4ca843851235329e00556, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ShipBullet: {fileID: 4323674457895942769, guid: 27ad8272f71368146aa23cd14d6d0b79,
+  ShipLaser: {fileID: 4323674457895942769, guid: 27ad8272f71368146aa23cd14d6d0b79,
     type: 3}
-  delayTime: 0.2
+  shootDelayTime: 0.5
   audioData: {fileID: 0}
 --- !u!114 &-7501108423192640079
 MonoBehaviour:
@@ -204,7 +204,7 @@ AudioSource:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6857071572901219993}
-  m_Enabled: 0
+  m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 7157fc4db081644b9a9a8e959ae24a59, type: 3}
