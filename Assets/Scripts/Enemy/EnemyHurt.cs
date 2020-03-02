@@ -36,7 +36,6 @@ public class EnemyHurt : MonoBehaviour
                 if (PlayerShoot.multiplier < maxMultiplier)
                 {
                     PlayerShoot.multiplier++;
-
                 }
             }
         }
