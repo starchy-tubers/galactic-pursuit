@@ -18,10 +18,10 @@ public class ShipShoot : MonoBehaviour
 
     private void Update()
     {
+        delayTime = 0.50f / multiplier;
         if (!canShoot) return;
         canShoot = false;
         StartCoroutine(NoFire());
-        delayTime = 0.50f / multiplier;
 
     }
 
