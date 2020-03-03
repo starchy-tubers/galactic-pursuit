@@ -32,10 +32,10 @@ public class EnemyHurt : MonoBehaviour
                 // audioSource.PlayOneShot(audioClip2);
                 // gameObject.SetActive(false);
                 Destroy(gameObject);
-                float maxMultiplier = GameObject.Find("Ship").GetComponent<PlayerShoot>().maxMultiplier;
-                if (PlayerShoot.multiplier < maxMultiplier)
+                float maxMultiplier = GameObject.Find("Ship").GetComponent<ShipShoot>().maxMultiplier;
+                if (ShipShoot.multiplier < maxMultiplier)
                 {
-                    PlayerShoot.multiplier++;
+                    ShipShoot.multiplier++;
                 }
             }
         }
