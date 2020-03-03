@@ -1,9 +1,9 @@
 ﻿using System.Collections;
 using UnityEngine;
 
-public class PlayerShoot : MonoBehaviour
+public class ShipShoot : MonoBehaviour
 {
-    public GameObject ShipBullet;
+    public GameObject ShipLaser;
     public static float multiplier = 1.0f;
     public float delayTime = 0.50f / multiplier;
     public int minMultiplier = 1;
@@ -44,7 +44,7 @@ public class PlayerShoot : MonoBehaviour
     private IEnumerator NoFire()
     {
         yield return new WaitForSeconds(delayTime);
-        Instantiate(ShipBullet, new Vector3(transform.position.x, transform.position.y + 0.5f), transform.rotation);
+        Instantiate(ShipLaser, new Vector3(transform.position.x, transform.position.y + 0.5f), transform.rotation);
         audioData.Play(0);
         canShoot = true;
     }
