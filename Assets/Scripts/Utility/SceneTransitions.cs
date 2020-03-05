@@ -10,12 +10,14 @@ public class SceneTransitions : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(Input.GetMouseButton(0)) {
+        if (Input.GetMouseButton(0))
+        {
             StartCoroutine(LoadScene());
-        }        
+        }
     }
 
-    private IEnumerator LoadScene() {
+    private IEnumerator LoadScene()
+    {
         transitionAnim.SetTrigger("End");
         yield return new WaitForSeconds(0.5f);
         SceneManager.LoadSceneAsync(sceneName);
