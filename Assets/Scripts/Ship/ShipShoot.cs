@@ -18,11 +18,10 @@ public class ShipShoot : MonoBehaviour
 
     private void Update()
     {
+        shootDelayTime = 0.50f / multiplier;
         if (!canShoot) return;
         canShoot = false;
         StartCoroutine(NoFire());
-        shootDelayTime = 0.50f / multiplier;
-
     }
 
     private void OnCollisionEnter2D(Collision2D col)
