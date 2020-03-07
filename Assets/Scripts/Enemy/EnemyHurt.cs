@@ -29,9 +29,9 @@ public class EnemyHurt : MonoBehaviour
             {
                 AudioSource.PlayClipAtPoint(laserImpactSound, new Vector2(0, 0));
                 AudioSource.PlayClipAtPoint(explosionSound, new Vector2(0, 0));
-                // audioSource.PlayOneShot(audioClip2);
-                // gameObject.SetActive(false);
+
                 Destroy(gameObject);
+
                 float maxMultiplier = GameObject.Find("Ship").GetComponent<ShipShoot>().maxMultiplier;
                 if (ShipShoot.multiplier < maxMultiplier)
                 {
