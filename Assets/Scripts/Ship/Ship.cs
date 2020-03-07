@@ -5,6 +5,7 @@ public class Ship : MonoBehaviour
 {
     [SerializeField]
     public int shipHealth = 10;
+
     [SerializeField]
     Sprite[] healthBarSpriteArray;
     private SpriteRenderer spriteRenderer;

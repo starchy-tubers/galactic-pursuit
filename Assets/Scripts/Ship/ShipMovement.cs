@@ -6,18 +6,18 @@ public class ShipMovement : MonoBehaviour
     bool moveRight = false;
     bool locked = false;
     bool canDoAction = true;
-    Vector2 position;
-    Vector2 target;
-    float speed = 15f;
-    Camera camera;
-    float cameraWidth;
-    float movementDistance;
-    float numberOfColumns = 5;
+    private Vector2 position;
+    private Vector2 target;
+    private float speed = 15f;
+    private Camera mainCamera;
+    private float cameraWidth;
+    private float movementDistance;
+    private float numberOfColumns = 5;
 
     void Start()
     {
-        camera = Camera.main;
-        cameraWidth = camera.aspect * camera.orthographicSize * 2;
+        mainCamera = Camera.main;
+        cameraWidth = mainCamera.aspect * mainCamera.orthographicSize * 2;
         movementDistance = cameraWidth / numberOfColumns;
         position = transform.position;
         target.y = -5.5f;
@@ -28,12 +28,11 @@ public class ShipMovement : MonoBehaviour
         position.y = Mathf.MoveTowards(transform.position.y, target.y, Time.deltaTime * 7f);
         transform.position = position;
 
-
-
         if (Input.GetKeyDown("left") && canDoAction)
         {
             moveLeft = true;
         }
+
         if (Input.GetKeyDown("right") && canDoAction)
         {
             moveRight = true;
