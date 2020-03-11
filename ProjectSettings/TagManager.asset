@@ -14,6 +14,9 @@ TagManager:
   - BulletsPowerUp
   - Asteroid
   - HealthPack
+  - Settings
+  - Resume
+  - MuteButton
   layers:
   - Default
   - TransparentFX
