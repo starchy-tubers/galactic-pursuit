@@ -9,12 +9,12 @@ public class SoundButton : MonoBehaviour
     public Sprite mute;
     public Button button;
     public Sprite unmute;
-
     void start()
     {
         spriteRenderer = gameObject.GetComponent<SpriteRenderer>();
 
     }
+
     void Update()
     {
         if (PauseMenu.muted == false)
