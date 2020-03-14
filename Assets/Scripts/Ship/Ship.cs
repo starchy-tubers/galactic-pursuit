@@ -41,7 +41,7 @@ public class Ship : MonoBehaviour
                 Destroy(gameObject);
             }
         }
-        if (col.gameObject.CompareTag("HealthPack"))
+        if (col.gameObject.CompareTag("HealthPack") && shipHealth < 10)
         {
             shipHealth++;
         }
