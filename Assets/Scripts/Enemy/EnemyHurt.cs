@@ -3,9 +3,13 @@
 public class EnemyHurt : MonoBehaviour
 {
     public int enemyHealth = 5;
+
     Animator animator;
+
     AudioSource[] audioSources;
+
     AudioClip laserImpactSound;
+
     AudioClip explosionSound;
 
     void Start()
@@ -27,13 +31,13 @@ public class EnemyHurt : MonoBehaviour
 
             if (enemyHealth == 0)
             {
-                AudioSource.PlayClipAtPoint(laserImpactSound, new Vector2(0, 0));
+                AudioSource.PlayClipAtPoint(laserImpactSound,
+                new Vector2(0, 0));
                 AudioSource.PlayClipAtPoint(explosionSound, new Vector2(0, 0));
 
                 Destroy(gameObject);
 
-                float maxMultiplier = GameObject.Find("Ship").GetComponent<ShipShoot>().maxMultiplier;
-                if (ShipShoot.multiplier < maxMultiplier)
+                if (ShipShoot.multiplier < ShipShoot.maxMultiplier)
                 {
                     ShipShoot.multiplier++;
                 }

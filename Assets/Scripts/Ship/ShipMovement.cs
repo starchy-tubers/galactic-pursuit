@@ -3,15 +3,25 @@
 public class ShipMovement : MonoBehaviour
 {
     bool moveLeft = false;
+
     bool moveRight = false;
+
     bool locked = false;
+
     bool canDoAction = true;
+
     private Vector2 position;
+
     private Vector2 target;
+
     private float speed = 15f;
+
     private Camera mainCamera;
+
     private float cameraWidth;
+
     private float movementDistance;
+
     private float numberOfColumns = 5;
 
     void Start()
@@ -25,7 +35,10 @@ public class ShipMovement : MonoBehaviour
 
     void Update()
     {
-        position.y = Mathf.MoveTowards(transform.position.y, target.y, Time.deltaTime * 7f);
+        position.y =
+            Mathf.MoveTowards(transform.position.y,
+            target.y,
+            Time.deltaTime * 7f);
         transform.position = position;
 
         if (Input.GetKeyDown("left") && canDoAction)
@@ -59,13 +72,18 @@ public class ShipMovement : MonoBehaviour
         {
             canDoAction = false;
 
-            if (!locked && transform.position.x > -3) //TODO: Make "3" a calculated value?
+            if (
+                !locked && transform.position.x > -3 //TODO: Make "3" a calculated value?
+            )
             {
                 target.x = transform.position.x - movementDistance;
                 locked = true;
             }
 
-            position.x = Mathf.MoveTowards(transform.position.x, target.x, Time.deltaTime * speed);
+            position.x =
+                Mathf.MoveTowards(transform.position.x,
+                target.x,
+                Time.deltaTime * speed);
             transform.position = position;
             if (transform.position.x == target.x)
             {
@@ -84,7 +102,10 @@ public class ShipMovement : MonoBehaviour
                 locked = true;
             }
 
-            position.x = Mathf.MoveTowards(transform.position.x, target.x, Time.deltaTime * speed);
+            position.x =
+                Mathf.MoveTowards(transform.position.x,
+                target.x,
+                Time.deltaTime * speed);
             transform.position = position;
             if (transform.position.x == target.x)
             {
