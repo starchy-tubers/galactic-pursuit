@@ -17,8 +17,6 @@ TagManager:
   - Settings
   - Resume
   - MuteButton
-  - EnemyProjectile
-  - BasicEnemy
   layers:
   - Default
   - TransparentFX

@@ -41,12 +41,13 @@ public class ShipMovement : MonoBehaviour
             Time.deltaTime * 7f);
         transform.position = position;
 
-        if (Input.GetKeyDown("left") && canDoAction)
+
+
+        if (Input.GetKeyDown("left") && canDoAction && PauseMenu.GameisPaused == false)
         {
             moveLeft = true;
         }
-
-        if (Input.GetKeyDown("right") && canDoAction)
+        if (Input.GetKeyDown("right") && canDoAction && PauseMenu.GameisPaused == false)
         {
             moveRight = true;
         }
@@ -56,11 +57,11 @@ public class ShipMovement : MonoBehaviour
             switch (Input.GetTouch(0).phase)
             {
                 case TouchPhase.Began:
-                    if (Input.GetTouch(0).position.x < Screen.width / 2)
+                    if (Input.GetTouch(0).position.x < Screen.width / 2 && Input.GetTouch(0).position.y < Screen.height / 2 && PauseMenu.GameisPaused == false)
                     {
                         moveLeft = true;
                     }
-                    else if (Input.GetTouch(0).position.x > Screen.width / 2)
+                    else if (Input.GetTouch(0).position.x > Screen.width / 2 && Input.GetTouch(0).position.y < Screen.height / 2 && PauseMenu.GameisPaused == false)
                     {
                         moveRight = true;
                     }
