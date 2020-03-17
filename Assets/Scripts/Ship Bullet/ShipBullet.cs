@@ -21,7 +21,7 @@ public class ShipBullet : MonoBehaviour
     private void OnCollisionEnter2D(Collision2D col)
     {
         if (
-            col.gameObject.CompareTag("GreenEnemy") ||
+            col.gameObject.CompareTag("BasicEnemy") ||
             col.gameObject.CompareTag("Asteroid")
         )
         {

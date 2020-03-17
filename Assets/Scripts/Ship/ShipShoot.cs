@@ -42,7 +42,7 @@ public class ShipShoot : MonoBehaviour
 
         if (
             col.gameObject.CompareTag("EnemyBullet") ||
-            col.gameObject.CompareTag("GreenEnemy") ||
+            col.gameObject.CompareTag("BasicEnemy") ||
             col.gameObject.CompareTag("Asteroid")
         )
         {
