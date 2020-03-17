@@ -4,18 +4,31 @@ using UnityEngine;
 public class Asteroid : MonoBehaviour
 {
     public GameObject BulletsPowerUp;
+
     public GameObject HealthPowerUp;
+
     float RandomNum;
+
     private const float velX = 0;
+
     public float velY = -3f;
+
     Rigidbody2D rb;
+
     int asteroidHealth = 10;
+
     bool canAppear = true;
+
     float powerUpDelay = 1.0f;
+
     float bulletsPowerUpChance = 0.25f;
+
     float healthPowerUpChance = 0.25f;
+
     AudioSource[] audioSources;
+
     AudioClip laserImpactSound;
+
     AudioClip explosionSound;
 
     private void Start()
@@ -37,31 +50,39 @@ public class Asteroid : MonoBehaviour
     {
         if (col.gameObject.CompareTag("ShipBullet"))
         {
-
-            int shipHealth = GameObject.Find("Ship").GetComponent<Ship>().shipHealth;
+            int shipHealth =
+                GameObject.Find("Ship").GetComponent<Ship>().shipHealth;
             asteroidHealth -= 1;
             audioSources[0].PlayOneShot(laserImpactSound);
 
             if (asteroidHealth == 0)
             {
-                AudioSource.PlayClipAtPoint(laserImpactSound, new Vector2(0, 0));
+                AudioSource.PlayClipAtPoint(laserImpactSound,
+                new Vector2(0, 0));
                 AudioSource.PlayClipAtPoint(explosionSound, new Vector2(0, 0));
 
                 Destroy(gameObject);
 
                 if (Random.Range(0.00f, 1.00f) < bulletsPowerUpChance)
                 {
-                    Instantiate(BulletsPowerUp, transform.position, transform.rotation);
+                    Instantiate(BulletsPowerUp,
+                    transform.position,
+                    transform.rotation);
                     canAppear = false;
                     StartCoroutine(NoAppear());
                 }
-                if (Random.Range(0.00f, 1.00f) < healthPowerUpChance && shipHealth < 10 && canAppear)
+                if (
+                    Random.Range(0.00f, 1.00f) < healthPowerUpChance &&
+                    shipHealth < 10 &&
+                    canAppear
+                )
                 {
-                    Instantiate(HealthPowerUp, transform.position, transform.rotation);
+                    Instantiate(HealthPowerUp,
+                    transform.position,
+                    transform.rotation);
                 }
             }
         }
-
     }
 
     private IEnumerator NoAppear()

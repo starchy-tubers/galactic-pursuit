@@ -3,13 +3,14 @@
 public class EnemyLaser : MonoBehaviour
 {
     public float velY;
+
     private const float velX = 0;
+
     Rigidbody2D rb;
 
     private void Start()
     {
         rb = GetComponent<Rigidbody2D>();
-
     }
 
     private void Update()

@@ -1,6 +1,6 @@
-﻿using UnityEngine;
-using System.Collections;
-using System.Collections.Generic;
+﻿using System.Collections;
+using UnityEngine;
+
 public class Ship : MonoBehaviour
 {
     [SerializeField]
@@ -8,13 +8,17 @@ public class Ship : MonoBehaviour
 
     [SerializeField]
     Sprite[] healthBarSpriteArray;
+
     private SpriteRenderer spriteRenderer;
+
     bool canDamage = true;
+
     AudioSource[] audioSources;
 
     private void Start()
     {
-        spriteRenderer = GameObject.FindWithTag("HealthBar").GetComponent<SpriteRenderer>();
+        spriteRenderer =
+            GameObject.FindWithTag("HealthBar").GetComponent<SpriteRenderer>();
         audioSources = GetComponents<AudioSource>();
     }
 
@@ -22,7 +26,11 @@ public class Ship : MonoBehaviour
     {
         // TODO: Need to make a list of things that can damage the ship and check if the gameObject exists in that list
         // This if statement is unsustainable as more hostile objects are added
-        if (col.gameObject.CompareTag("EnemyProjectile") || col.gameObject.CompareTag("BasicEnemy") || col.gameObject.CompareTag("Asteroid"))
+        if (
+            col.gameObject.CompareTag("EnemyProjectile") ||
+            col.gameObject.CompareTag("BasicEnemy") ||
+            col.gameObject.CompareTag("Asteroid")
+        )
         {
             shipHealth -= 1;
             audioSources[1].PlayOneShot(audioSources[1].clip);
@@ -79,5 +87,4 @@ public class Ship : MonoBehaviour
         yield return new WaitForSeconds(1.0f);
         canDamage = true;
     }
-
 }

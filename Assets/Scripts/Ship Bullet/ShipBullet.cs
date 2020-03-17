@@ -3,7 +3,9 @@
 public class ShipBullet : MonoBehaviour
 {
     public float speed = 5f;
+
     private const float velX = 0;
+
     Rigidbody2D rb;
 
     private void Start()
@@ -29,4 +31,3 @@ public class ShipBullet : MonoBehaviour
         Destroy(gameObject);
     }
 }
-
