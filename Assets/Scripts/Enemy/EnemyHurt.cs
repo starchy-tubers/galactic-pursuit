@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using System.Collections;
 
 public class EnemyHurt : MonoBehaviour
 {
@@ -28,15 +29,12 @@ public class EnemyHurt : MonoBehaviour
             enemyHealth -= 1;
             animator.SetTrigger("Damaged");
             audioSources[0].PlayOneShot(laserImpactSound);
-
             if (enemyHealth == 0)
             {
                 AudioSource.PlayClipAtPoint(laserImpactSound,
                 new Vector2(0, 0));
                 AudioSource.PlayClipAtPoint(explosionSound, new Vector2(0, 0));
-
                 Destroy(gameObject);
-
                 if (ShipShoot.multiplier < ShipShoot.maxMultiplier)
                 {
                     ShipShoot.multiplier++;
