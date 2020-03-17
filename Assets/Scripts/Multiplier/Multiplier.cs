@@ -5,21 +5,20 @@ using UnityEngine;
 public class Multiplier : MonoBehaviour
 {
     private float multiplier;
+
     [SerializeField]
     private Sprite[] multiplierSpriteArray;
+
     private SpriteRenderer spriteRenderer;
 
     void Start()
     {
         spriteRenderer = GetComponent<SpriteRenderer>();
-        // multiplier = GameObject.Find("Ship").GetComponent<ShipShoot>().maxMultiplier;
     }
 
     // Update is called once per frame
     void Update()
     {
-
-        // multiplier = GameObject.Find("Ship").GetComponent<ShipShoot>().maxMultiplier;
         switch (ShipShoot.multiplier)
         {
             case 1:
@@ -38,6 +37,5 @@ public class Multiplier : MonoBehaviour
                 spriteRenderer.sprite = multiplierSpriteArray[4];
                 break;
         }
-
     }
 }

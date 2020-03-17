@@ -5,13 +5,14 @@ using UnityEngine;
 public class HealthPack : MonoBehaviour
 {
     Rigidbody2D rb;
+
     private const float velX = 0;
+
     public float velY = -1f;
 
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
-
     }
 
     void Update()

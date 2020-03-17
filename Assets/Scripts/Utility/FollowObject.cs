@@ -13,8 +13,14 @@ public class FollowObject : MonoBehaviour
         var interpolation = speed * Time.deltaTime;
 
         var position = transform.position;
-        position.y = Mathf.Lerp(transform.position.y, objectToFollow.transform.position.y, interpolation);
-        position.x = Mathf.Lerp(transform.position.x, objectToFollow.transform.position.x, interpolation);
+        position.y =
+            Mathf.Lerp(transform.position.y,
+            objectToFollow.transform.position.y,
+            interpolation);
+        position.x =
+            Mathf.Lerp(transform.position.x,
+            objectToFollow.transform.position.x,
+            interpolation);
 
         transform.position = position;
     }

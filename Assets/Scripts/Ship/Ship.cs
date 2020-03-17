@@ -1,35 +1,42 @@
-﻿using UnityEngine;
-using System.Collections;
-using System.Collections.Generic;
+﻿using System.Collections;
+using UnityEngine;
+
 public class Ship : MonoBehaviour
 {
     [SerializeField]
     public int shipHealth = 10;
+
     [SerializeField]
     Sprite[] healthBarSpriteArray;
+
     private SpriteRenderer spriteRenderer;
+
     bool canDamage = true;
+
+    AudioSource[] audioSources;
 
     private void Start()
     {
-        spriteRenderer = GameObject.FindWithTag("HealthBar").GetComponent<SpriteRenderer>();
+        spriteRenderer =
+            GameObject.FindWithTag("HealthBar").GetComponent<SpriteRenderer>();
+        audioSources = GetComponents<AudioSource>();
     }
 
     private void OnCollisionEnter2D(Collision2D col)
     {
         // TODO: Need to make a list of things that can damage the ship and check if the gameObject exists in that list
         // This if statement is unsustainable as more hostile objects are added
-        if (col.gameObject.CompareTag("EnemyBullet") || col.gameObject.CompareTag("GreenEnemy") || col.gameObject.CompareTag("Asteroid"))
+        if (
+            col.gameObject.CompareTag("EnemyProjectile") ||
+            col.gameObject.CompareTag("BasicEnemy") ||
+            col.gameObject.CompareTag("Asteroid")
+        )
         {
-            // if (!canDamage) return;
             shipHealth -= 1;
-            Debug.Log(shipHealth);
-            // canDamage = false;
-            // TODO: Probably a smarter way to do this
+            audioSources[1].PlayOneShot(audioSources[1].clip);
 
             if (shipHealth == 0)
             {
-
                 Destroy(gameObject);
             }
         }
@@ -74,15 +81,10 @@ public class Ship : MonoBehaviour
                 break;
         }
     }
-    void Damage()
-    {
-        shipHealth -= 1;
-        StartCoroutine(NoDamage());
-    }
+
     private IEnumerator NoDamage()
     {
         yield return new WaitForSeconds(1.0f);
         canDamage = true;
     }
-
 }

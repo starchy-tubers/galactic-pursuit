@@ -3,21 +3,31 @@
 public class ShipMovement : MonoBehaviour
 {
     bool moveLeft = false;
+
     bool moveRight = false;
+
     bool locked = false;
+
     bool canDoAction = true;
-    Vector2 position;
-    Vector2 target;
-    float speed = 15f;
-    Camera camera;
-    float cameraWidth;
-    float movementDistance;
-    float numberOfColumns = 5;
+
+    private Vector2 position;
+
+    private Vector2 target;
+
+    private float speed = 15f;
+
+    private Camera mainCamera;
+
+    private float cameraWidth;
+
+    private float movementDistance;
+
+    private float numberOfColumns = 5;
 
     void Start()
     {
-        camera = Camera.main;
-        cameraWidth = camera.aspect * camera.orthographicSize * 2;
+        mainCamera = Camera.main;
+        cameraWidth = mainCamera.aspect * mainCamera.orthographicSize * 2;
         movementDistance = cameraWidth / numberOfColumns;
         position = transform.position;
         target.y = -5.5f;
@@ -25,7 +35,10 @@ public class ShipMovement : MonoBehaviour
 
     void Update()
     {
-        position.y = Mathf.MoveTowards(transform.position.y, target.y, Time.deltaTime * 7f);
+        position.y =
+            Mathf.MoveTowards(transform.position.y,
+            target.y,
+            Time.deltaTime * 7f);
         transform.position = position;
 
 
@@ -60,13 +73,18 @@ public class ShipMovement : MonoBehaviour
         {
             canDoAction = false;
 
-            if (!locked && transform.position.x > -3) //TODO: Make "3" a calculated value?
+            if (
+                !locked && transform.position.x > -3 //TODO: Make "3" a calculated value?
+            )
             {
                 target.x = transform.position.x - movementDistance;
                 locked = true;
             }
 
-            position.x = Mathf.MoveTowards(transform.position.x, target.x, Time.deltaTime * speed);
+            position.x =
+                Mathf.MoveTowards(transform.position.x,
+                target.x,
+                Time.deltaTime * speed);
             transform.position = position;
             if (transform.position.x == target.x)
             {
@@ -85,7 +103,10 @@ public class ShipMovement : MonoBehaviour
                 locked = true;
             }
 
-            position.x = Mathf.MoveTowards(transform.position.x, target.x, Time.deltaTime * speed);
+            position.x =
+                Mathf.MoveTowards(transform.position.x,
+                target.x,
+                Time.deltaTime * speed);
             transform.position = position;
             if (transform.position.x == target.x)
             {

@@ -1,15 +1,27 @@
-﻿using System;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class EnemyMovement : MonoBehaviour
 {
     private const float movementSpeed = 1f;
-    private enum Direction { Left, Right, Up, Down };
+
+    private enum Direction
+    {
+        Left,
+        Right,
+        Up,
+        Down
+    }
+
     private Direction shipDirection;
+
     private Vector3 startPosition;
+
     public int enemyHealth = 5;
+
     private Vector2 currentPos;
+
     private Vector2 position;
+
     private Vector2 target;
 
     private float speed = 7f;
@@ -22,7 +34,10 @@ public class EnemyMovement : MonoBehaviour
 
     private void Update()
     {
-        position.y = Mathf.MoveTowards(transform.position.y, target.y, Time.deltaTime * speed);
+        position.y =
+            Mathf.MoveTowards(transform.position.y,
+            target.y,
+            Time.deltaTime * speed);
         transform.position = position;
     }
 
