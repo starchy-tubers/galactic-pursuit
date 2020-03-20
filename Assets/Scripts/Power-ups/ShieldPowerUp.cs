@@ -8,7 +8,7 @@ public class ShieldPowerUp : MonoBehaviour
 
     private const float velX = 0;
 
-    public float velY = -3f;
+    private float velY = -3f;
 
     void Start()
     {
