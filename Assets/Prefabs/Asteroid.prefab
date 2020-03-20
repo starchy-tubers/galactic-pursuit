@@ -52,6 +52,8 @@ MonoBehaviour:
     type: 3}
   HealthPowerUp: {fileID: 6221287883558905642, guid: 54682a31cbab6fc47adcb3d231ffe137,
     type: 3}
+  ShieldPowerUp: {fileID: 2890724513244811631, guid: 888a037fbb47b5c42916f59ca5d00feb,
+    type: 3}
   velY: -3
 --- !u!212 &6294207716035403421
 SpriteRenderer:

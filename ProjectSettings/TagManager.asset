@@ -16,6 +16,8 @@ TagManager:
   - HealthPack
   - EnemyProjectile
   - BasicEnemy
+  - ShieldPowerUp
+  - Shield
   layers:
   - Default
   - TransparentFX
