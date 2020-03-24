@@ -9,7 +9,7 @@ TagManager:
   - EnemyBullet
   - RedEnemyHurt
   - ShipBullet
-  - HealthBar
+  - HealthBars
   - GreenEnemy
   - BulletsPowerUp
   - Asteroid

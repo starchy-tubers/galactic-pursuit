@@ -1,5 +1,4 @@
 ﻿using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class Ship : MonoBehaviour
@@ -39,7 +38,7 @@ public class Ship : MonoBehaviour
                 Destroy(gameObject);
             }
         }
-        if (col.gameObject.CompareTag("HealthPack"))
+        if (col.gameObject.CompareTag("HealthPack") && shipHealth < 10)
         {
             shipHealth++;
         }
