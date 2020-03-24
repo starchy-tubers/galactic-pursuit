@@ -14,7 +14,7 @@ public class ShipShoot : MonoBehaviour
     public static int maxMultiplier = 5;
 
     bool canShoot = true;
-
+    bool canReduce = true;
     public AudioSource audioData;
 
     private void Start()
@@ -24,6 +24,11 @@ public class ShipShoot : MonoBehaviour
 
     private void Update()
     {
+        if (minMultiplier < multiplier && canReduce == true)
+        {
+            canReduce = false;
+            StartCoroutine(MultiplierReducer());
+        }
         shootDelayTime = 0.50f / multiplier;
         if (!canShoot) return;
         canShoot = false;
@@ -32,19 +37,15 @@ public class ShipShoot : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D col)
     {
-        if (
-            col.gameObject.CompareTag("BulletsPowerUp") &&
-            multiplier < maxMultiplier
-        )
+        if (col.gameObject.CompareTag("BulletsPowerUp"))
         {
-            multiplier++;
+            if (multiplier < maxMultiplier)
+            {
+                multiplier++;
+            }
         }
 
-        if (
-            col.gameObject.CompareTag("EnemyBullet") ||
-            col.gameObject.CompareTag("BasicEnemy") ||
-            col.gameObject.CompareTag("Asteroid")
-        )
+        if (col.gameObject.CompareTag("EnemyProjectile") || col.gameObject.CompareTag("BasicEnemy") || col.gameObject.CompareTag("Asteroid"))
         {
             if (minMultiplier < multiplier)
             {
@@ -61,5 +62,11 @@ public class ShipShoot : MonoBehaviour
         transform.rotation);
         audioData.Play(0);
         canShoot = true;
+    }
+    private IEnumerator MultiplierReducer()
+    {
+        yield return new WaitForSeconds(4.0f);
+        multiplier--;
+        canReduce = true;
     }
 }
