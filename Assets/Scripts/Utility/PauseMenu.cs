@@ -8,30 +8,6 @@ public class PauseMenu : MonoBehaviour
     public GameObject pauseMenuUI;
     public static bool muted = false;
 
-    //May want to keep this block of code around for reference.
-    /*void Update()
-    {
-        if ((Input.touchCount > 0) && (Input.GetTouch(0).phase == TouchPhase.Began))
-        {
-            Ray raycast = Camera.main.ScreenPointToRay(Input.GetTouch(0).position);
-            RaycastHit raycastHit;
-            if (Physics.Raycast(raycast, out raycastHit))
-            {
-                if (raycastHit.collider.CompareTag("Settings"))
-                {
-                    if (GameisPaused)
-                    {
-                        Resume();
-                    }
-                    else
-                    {
-                        Pause();
-                    }
-                }
-            }
-        }
-    }*/
-
     public void Resume()
     {
         pauseMenuUI.SetActive(false);
