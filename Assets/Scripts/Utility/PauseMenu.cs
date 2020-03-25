@@ -7,7 +7,9 @@ public class PauseMenu : MonoBehaviour
     public static bool GameisPaused = false;
     public GameObject pauseMenuUI;
     public static bool muted = false;
-    void Update()
+
+    //May want to keep this block of code around for reference.
+    /*void Update()
     {
         if ((Input.touchCount > 0) && (Input.GetTouch(0).phase == TouchPhase.Began))
         {
@@ -28,7 +30,7 @@ public class PauseMenu : MonoBehaviour
                 }
             }
         }
-    }
+    }*/
 
     public void Resume()
     {
