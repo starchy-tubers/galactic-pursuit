@@ -9,15 +9,14 @@ TagManager:
   - EnemyBullet
   - RedEnemyHurt
   - ShipBullet
-  - HealthBars
+  - HealthBar
   - GreenEnemy
   - BulletsPowerUp
   - Asteroid
   - HealthPack
-  - EnemyProjectile
-  - BasicEnemy
-  - ShieldPowerUp
-  - Shield
+  - Settings
+  - Resume
+  - MuteButton
   layers:
   - Default
   - TransparentFX

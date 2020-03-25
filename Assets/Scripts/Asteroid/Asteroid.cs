@@ -7,7 +7,6 @@ public class Asteroid : MonoBehaviour
 
     public GameObject HealthPowerUp;
 
-    public GameObject ShieldPowerUp;
     float RandomNum;
 
     private const float velX = 0;
@@ -25,8 +24,6 @@ public class Asteroid : MonoBehaviour
     float bulletsPowerUpChance = 0.25f;
 
     float healthPowerUpChance = 0.25f;
-
-    float shieldPowerUpChance = 0.25f;
 
     AudioSource[] audioSources;
 
@@ -66,7 +63,7 @@ public class Asteroid : MonoBehaviour
 
                 Destroy(gameObject);
 
-                if (Random.Range(0.00f, 1.00f) < bulletsPowerUpChance && canAppear)
+                if (Random.Range(0.00f, 1.00f) < bulletsPowerUpChance)
                 {
                     Instantiate(BulletsPowerUp,
                     transform.position,
@@ -83,14 +80,6 @@ public class Asteroid : MonoBehaviour
                     Instantiate(HealthPowerUp,
                     transform.position,
                     transform.rotation);
-                    canAppear = false;
-                    StartCoroutine(NoAppear());
-                }
-                if (Random.Range(0.00f, 1.00f) < shieldPowerUpChance && canAppear && Ship.shield == false)
-                {
-                    Instantiate(ShieldPowerUp, transform.position, transform.rotation);
-                    canAppear = false;
-                    StartCoroutine(NoAppear());
                 }
             }
         }
