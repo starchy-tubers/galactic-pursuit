@@ -8,7 +8,7 @@ public class BulletsPowerUp : MonoBehaviour
 
     private const float velX = 0;
 
-    private float velY = -3f;
+    public float velY = -3f;
 
     void Start()
     {

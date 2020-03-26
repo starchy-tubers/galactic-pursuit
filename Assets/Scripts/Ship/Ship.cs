@@ -5,12 +5,16 @@ public class Ship : MonoBehaviour
 {
     [SerializeField]
     public int shipHealth = 10;
+
     [SerializeField]
     Sprite[] healthBarSpriteArray;
+
     private SpriteRenderer spriteRenderer;
+
     bool canDamage = true;
-    public static bool shield = false;
+
     AudioSource[] audioSources;
+
     private void Start()
     {
         spriteRenderer =
@@ -28,11 +32,9 @@ public class Ship : MonoBehaviour
             col.gameObject.CompareTag("Asteroid")
         )
         {
-            if (shield == false)
-            {
-                shipHealth -= 1;
-                audioSources[1].PlayOneShot(audioSources[1].clip);
-            }
+            shipHealth -= 1;
+            audioSources[1].PlayOneShot(audioSources[1].clip);
+
             if (shipHealth == 0)
             {
                 Destroy(gameObject);
