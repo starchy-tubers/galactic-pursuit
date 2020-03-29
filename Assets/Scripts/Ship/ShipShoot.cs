@@ -7,6 +7,8 @@ public class ShipShoot : MonoBehaviour
 
     public static float multiplier = 1.0f;
 
+    public static float multiplierTimer = 4.0f;
+
     public float shootDelayTime = 0.50f / multiplier;
 
     public static int minMultiplier = 1;
@@ -14,7 +16,6 @@ public class ShipShoot : MonoBehaviour
     public static int maxMultiplier = 5;
 
     bool canShoot = true;
-    bool canReduce = true;
     public AudioSource audioData;
 
     private void Start()
@@ -24,10 +25,11 @@ public class ShipShoot : MonoBehaviour
 
     private void Update()
     {
-        if (minMultiplier < multiplier && canReduce == true)
+        multiplierTimer -= Time.deltaTime;
+        if (multiplierTimer < 0 && minMultiplier < multiplier)
         {
-            canReduce = false;
-            StartCoroutine(MultiplierReducer());
+            multiplier--;
+            multiplierTimer = 4.0f;
         }
         shootDelayTime = 0.50f / multiplier;
         if (!canShoot) return;
@@ -39,6 +41,7 @@ public class ShipShoot : MonoBehaviour
     {
         if (col.gameObject.CompareTag("BulletsPowerUp"))
         {
+            multiplierTimer = 4.0f;
             if (multiplier < maxMultiplier)
             {
                 multiplier++;
@@ -47,6 +50,7 @@ public class ShipShoot : MonoBehaviour
 
         if (col.gameObject.CompareTag("EnemyProjectile") || col.gameObject.CompareTag("BasicEnemy") || col.gameObject.CompareTag("Asteroid"))
         {
+            multiplierTimer = 4.0f;
             if (minMultiplier < multiplier)
             {
                 multiplier--;
@@ -62,11 +66,5 @@ public class ShipShoot : MonoBehaviour
         transform.rotation);
         audioData.Play(0);
         canShoot = true;
-    }
-    private IEnumerator MultiplierReducer()
-    {
-        yield return new WaitForSeconds(4.0f);
-        multiplier--;
-        canReduce = true;
     }
 }
