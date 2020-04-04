@@ -8,7 +8,7 @@ public class HealthPack : MonoBehaviour
 
     private const float velX = 0;
 
-    public float velY = -1f;
+    private float velY = -3f;
 
     void Start()
     {

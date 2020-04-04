@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class BulletsPowerUp : MonoBehaviour
+public class ShieldPowerUp : MonoBehaviour
 {
     Rigidbody2D rb;
 
@@ -24,6 +24,8 @@ public class BulletsPowerUp : MonoBehaviour
     {
         if (col.gameObject.CompareTag("Ship"))
         {
+            Shield.shieldCanAppear = true;
+            Ship.shield = true;
             Destroy(gameObject);
         }
     }
