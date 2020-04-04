@@ -31,6 +31,7 @@ public class EnemyHurt : MonoBehaviour
             audioSources[0].PlayOneShot(laserImpactSound);
             if (enemyHealth == 0)
             {
+                ShipShoot.multiplierTimer = 4.0f;
                 AudioSource.PlayClipAtPoint(laserImpactSound,
                 new Vector2(0, 0));
                 AudioSource.PlayClipAtPoint(explosionSound, new Vector2(0, 0));
