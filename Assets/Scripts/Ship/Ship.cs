@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Ship : MonoBehaviour
 {
@@ -32,10 +33,6 @@ public class Ship : MonoBehaviour
             {
                 shipHealth -= 1;
                 audioSources[1].PlayOneShot(audioSources[1].clip);
-            }
-            if (shipHealth == 0)
-            {
-                Destroy(gameObject);
             }
         }
         if (col.gameObject.CompareTag("HealthPack") && shipHealth < 10)
@@ -76,6 +73,8 @@ public class Ship : MonoBehaviour
                 break;
             default:
                 spriteRenderer.sprite = healthBarSpriteArray[0];
+                Destroy(gameObject);
+                SceneManager.LoadSceneAsync("Game Over");
                 break;
         }
     }
