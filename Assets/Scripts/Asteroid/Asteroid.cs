@@ -94,6 +94,10 @@ public class Asteroid : MonoBehaviour
                 }
             }
         }
+        if (col.gameObject.CompareTag("Ship") || col.gameObject.CompareTag("Shield"))
+        {
+            Destroy(gameObject);
+        }
     }
 
     private IEnumerator NoAppear()
