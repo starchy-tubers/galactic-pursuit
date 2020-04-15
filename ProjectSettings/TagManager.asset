@@ -17,6 +17,15 @@ TagManager:
   - Settings
   - Resume
   - MuteButton
+  - ShieldPowerUp
+  - EnemyProjectile
+  - BasicEnemy
+  - Shield
+  - ColumnPosition0
+  - ColumnPosition1
+  - ColumnPosition2
+  - ColumnPosition3
+  - ColumnPosition4
   layers:
   - Default
   - TransparentFX

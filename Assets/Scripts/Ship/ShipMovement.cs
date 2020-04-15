@@ -16,19 +16,13 @@ public class ShipMovement : MonoBehaviour
 
     private float speed = 15f;
 
-    private Camera mainCamera;
-
-    private float cameraWidth;
-
     private float movementDistance;
 
-    private float numberOfColumns = 5;
+    private int columnPosition = 2;
 
     void Start()
     {
-        mainCamera = Camera.main;
-        cameraWidth = mainCamera.aspect * mainCamera.orthographicSize * 2;
-        movementDistance = cameraWidth / numberOfColumns;
+        movementDistance = (float)Screen.width / (((float)Screen.width / 1.5f));
         position = transform.position;
         target.y = -5.5f;
     }
@@ -40,8 +34,6 @@ public class ShipMovement : MonoBehaviour
             target.y,
             Time.deltaTime * 7f);
         transform.position = position;
-
-
 
         if (Input.GetKeyDown("left") && canDoAction && PauseMenu.GameisPaused == false)
         {
@@ -74,13 +66,13 @@ public class ShipMovement : MonoBehaviour
             canDoAction = false;
 
             if (
-                !locked && transform.position.x > -3 //TODO: Make "3" a calculated value?
+                !locked && columnPosition != 0
             )
             {
                 target.x = transform.position.x - movementDistance;
                 locked = true;
+                columnPosition--;
             }
-
             position.x =
                 Mathf.MoveTowards(transform.position.x,
                 target.x,
@@ -97,14 +89,14 @@ public class ShipMovement : MonoBehaviour
         if (moveRight)
         {
             canDoAction = false;
-            if (!locked && transform.position.x < 3)
+            if (!locked && columnPosition != 4)
             {
                 target.x = transform.position.x + movementDistance;
                 locked = true;
+                columnPosition++;
             }
 
-            position.x =
-                Mathf.MoveTowards(transform.position.x,
+            position.x = Mathf.MoveTowards(transform.position.x,
                 target.x,
                 Time.deltaTime * speed);
             transform.position = position;
