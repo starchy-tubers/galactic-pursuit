@@ -4,21 +4,55 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 public class PauseMenu : MonoBehaviour
 {
-    public static bool GameisPaused = false; //Do we need this?
+    public static bool GameisPaused = false;
     public GameObject pauseMenuUI;
     public static bool muted = false;
+
+    void Update()
+    {
+        if ((Input.touchCount > 0) && (Input.GetTouch(0).phase == TouchPhase.Began))
+        {
+            Ray raycast = Camera.main.ScreenPointToRay(Input.GetTouch(0).position);
+            RaycastHit raycastHit;
+            if (Physics.Raycast(raycast, out raycastHit))
+            {
+                if (raycastHit.collider.CompareTag("Settings"))
+                {
+                    if (GameisPaused)
+                    {
+                        Resume();
+                    }
+                    else
+                    {
+                        Pause();
+                    }
+                }
+            }
+        }
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            if (GameisPaused)
+            {
+                Resume();
+            }
+            else
+            {
+                Pause();
+            }
+        }
+    }
     public void Resume()
     {
         pauseMenuUI.SetActive(false);
         Time.timeScale = 1f;
-        GameisPaused = false; //Do we need this?
+        GameisPaused = false;
     }
 
     public void Pause()
     {
         pauseMenuUI.SetActive(true);
         Time.timeScale = 0f;
-        GameisPaused = true; //Do we need this?
+        GameisPaused = true;
     }
 
     public void MainMenu()

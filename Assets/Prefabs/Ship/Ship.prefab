@@ -68,8 +68,6 @@ MonoBehaviour:
   ShipLaser: {fileID: 4323674457895942769, guid: 27ad8272f71368146aa23cd14d6d0b79,
     type: 3}
   shootDelayTime: 0.5
-  minMultiplier: 1
-  maxMultiplier: 5
   audioData: {fileID: 0}
 --- !u!114 &-7501108423192640079
 MonoBehaviour:
@@ -108,6 +106,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6d7be5f68fb3946f3b1c19c921ee2baa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Ship: {fileID: 6857071572901219993}
+  Column0: {fileID: 1290027365459850089, guid: b6c3b8a656a38f748bf9926f0d957812, type: 3}
+  Column1: {fileID: 7421248174598430518, guid: 9d99354194a83d049bae2b8fbf7bac93, type: 3}
+  Column2: {fileID: 269192039619469202, guid: 53650922aa59b684f8bdff5f25d4bfcd, type: 3}
+  Column3: {fileID: 1530306524937907215, guid: 100d6f2b5de1a454294295dff3b50618, type: 3}
+  Column4: {fileID: 8540820535370421364, guid: a5ee412fad8060449b9b361ceb86e655, type: 3}
 --- !u!212 &6857071572901219992
 SpriteRenderer:
   m_ObjectHideFlags: 0

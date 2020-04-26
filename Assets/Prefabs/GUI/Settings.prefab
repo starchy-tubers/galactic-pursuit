@@ -10,8 +10,8 @@ GameObject:
   m_Component:
   - component: {fileID: 1531047341715683584}
   - component: {fileID: 1531047341715683585}
-  - component: {fileID: 6175639706134891907}
-  - component: {fileID: 1978973258319628676}
+  - component: {fileID: -978365104663366662}
+  - component: {fileID: 6074917214138085852}
   m_Layer: 0
   m_Name: Settings
   m_TagString: Settings
@@ -28,7 +28,7 @@ Transform:
   m_GameObject: {fileID: 1531047341715683586}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 3.326, y: 6.227, z: 0}
-  m_LocalScale: {x: 0.1736549, y: 0.1736549, z: 0.1736549}
+  m_LocalScale: {x: 0.05, y: 0.05, z: 0.05}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -83,20 +83,7 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!135 &6175639706134891907
-SphereCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1531047341715683586}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Radius: 1.9999999
-  m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &1978973258319628676
+--- !u!114 &-978365104663366662
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -108,6 +95,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: abe69f77473b0ab4394a10ffbf661c8b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  transitionAnim: {fileID: 0}
-  sceneName: 
-  pauseMenuUI: {fileID: 0}
+  pauseMenuUI: {fileID: 1615461511634342275, guid: ca46c87e0010c274fb0fbfed3f13dfb0,
+    type: 3}
+--- !u!135 &6074917214138085852
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1531047341715683586}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 8.333333
+  m_Center: {x: 0, y: 0, z: 0}
