@@ -22,11 +22,11 @@ public class Asteroid : MonoBehaviour
 
     float powerUpDelay = 1.0f;
 
-    float bulletsPowerUpChance = 0.25f;
+    float bulletsPowerUpChance = 0.5f;
 
-    float healthPowerUpChance = 0.25f;
+    float healthPowerUpChance = 0.5f;
 
-    float shieldPowerUpChance = 0.25f;
+    float shieldPowerUpChance = 0.5f;
 
     AudioSource[] audioSources;
 
