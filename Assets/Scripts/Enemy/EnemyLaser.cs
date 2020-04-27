@@ -26,7 +26,8 @@ public class EnemyLaser : MonoBehaviour
         //     Physics.IgnoreCollision(GetComponent<Collider>(), GetComponent<Collider>());
         // }
         if (col.gameObject.CompareTag("Ship") ||
-            col.gameObject.CompareTag("Shield"))
+            col.gameObject.CompareTag("Shield") ||
+            col.gameObject.CompareTag("Asteroid"))
         {
             Destroy(gameObject);
         }

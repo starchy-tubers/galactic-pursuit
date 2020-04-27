@@ -31,7 +31,7 @@ public class ShipShoot : MonoBehaviour
             multiplier--;
             multiplierTimer = 4.0f;
         }
-        shootDelayTime = 0.50f / multiplier;
+        shootDelayTime = 0.40f / multiplier;
         if (!canShoot) return;
         canShoot = false;
         StartCoroutine(NoFire());

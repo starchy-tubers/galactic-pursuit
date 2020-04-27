@@ -16,17 +16,15 @@ public class Asteroid : MonoBehaviour
 
     Rigidbody2D rb;
 
-    int asteroidHealth = 10;
+    int asteroidHealth = 5;
 
     bool canAppear = true;
 
     float powerUpDelay = 1.0f;
 
-    float bulletsPowerUpChance = 0.5f;
+    float bulletsPowerUpChance = 1;
 
-    float healthPowerUpChance = 0.5f;
-
-    float shieldPowerUpChance = 0.5f;
+    float healthPowerUpChance = 2;
 
     AudioSource[] audioSources;
 
@@ -65,8 +63,7 @@ public class Asteroid : MonoBehaviour
                 AudioSource.PlayClipAtPoint(explosionSound, new Vector2(0, 0));
 
                 Destroy(gameObject);
-
-                if (Random.Range(0.00f, 1.00f) < bulletsPowerUpChance && canAppear)
+                if (Random.Range(1, 3) == bulletsPowerUpChance && canAppear)
                 {
                     Instantiate(BulletsPowerUp,
                     transform.position,
@@ -74,11 +71,7 @@ public class Asteroid : MonoBehaviour
                     canAppear = false;
                     StartCoroutine(NoAppear());
                 }
-                if (
-                    Random.Range(0.00f, 1.00f) < healthPowerUpChance &&
-                    shipHealth < 10 &&
-                    canAppear
-                )
+                else if (Random.Range(1, 3) == healthPowerUpChance && canAppear)
                 {
                     Instantiate(HealthPowerUp,
                     transform.position,
@@ -86,9 +79,11 @@ public class Asteroid : MonoBehaviour
                     canAppear = false;
                     StartCoroutine(NoAppear());
                 }
-                if (Random.Range(0.00f, 1.00f) < shieldPowerUpChance && canAppear && Ship.shield == false)
+                else
                 {
-                    Instantiate(ShieldPowerUp, transform.position, transform.rotation);
+                    Instantiate(ShieldPowerUp,
+                    transform.position,
+                    transform.rotation);
                     canAppear = false;
                     StartCoroutine(NoAppear());
                 }

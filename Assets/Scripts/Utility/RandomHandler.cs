@@ -9,6 +9,6 @@ public static class RandomHandler
 
     public static double AsteroidRandomAppear()
     {
-        return random.NextDouble() * 20.92756195672f;
+        return random.NextDouble() * 25.92756195672f;
     }
 }
