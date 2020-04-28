@@ -17,7 +17,6 @@ public class EnemyHurt : MonoBehaviour
     {
         animator = GetComponent<Animator>();
         audioSources = GetComponents<AudioSource>();
-
         laserImpactSound = audioSources[0].clip;
         explosionSound = audioSources[1].clip;
     }

@@ -15,7 +15,8 @@ public class ShipShoot : MonoBehaviour
 
     public static int maxMultiplier = 5;
 
-    bool canShoot = true;
+    public static bool canShoot = true;
+    public static bool shootDisabled = false;
     public AudioSource audioData;
 
     private void Start()
@@ -61,9 +62,11 @@ public class ShipShoot : MonoBehaviour
     private IEnumerator NoFire()
     {
         yield return new WaitForSeconds(shootDelayTime);
-        Instantiate(ShipLaser,
-        new Vector3(transform.position.x, transform.position.y + 0.5f),
-        transform.rotation);
+
+        if (!shootDisabled)
+        {
+            Instantiate(ShipLaser, new Vector3(transform.position.x, transform.position.y + 0.5f), transform.rotation);
+        }
         audioData.Play(0);
         canShoot = true;
     }

@@ -4,19 +4,25 @@ using UnityEngine.SceneManagement;
 
 public class Ship : MonoBehaviour
 {
-    [SerializeField]
-    public int shipHealth = 10;
-    [SerializeField]
-    Sprite[] healthBarSpriteArray;
+    [SerializeField] public int shipHealth = 10;
+    [SerializeField] Sprite[] healthBarSpriteArray;
     private SpriteRenderer spriteRenderer;
     bool canDamage = true;
     public static bool shield = false;
     AudioSource[] audioSources;
+    AudioClip shipLaser;
+    AudioClip shipImpact;
+    AudioClip shipDeath;
+    Animator animator;
+
     private void Start()
     {
-        spriteRenderer =
-            GameObject.FindWithTag("HealthBar").GetComponent<SpriteRenderer>();
+        spriteRenderer = GameObject.FindWithTag("HealthBar").GetComponent<SpriteRenderer>();
         audioSources = GetComponents<AudioSource>();
+        shipLaser = audioSources[0].clip;
+        shipImpact = audioSources[1].clip;
+        shipDeath = audioSources[2].clip;
+        animator = GetComponent<Animator>();
     }
 
     private void OnCollisionEnter2D(Collision2D col)
@@ -32,13 +38,16 @@ public class Ship : MonoBehaviour
             if (shield == false)
             {
                 shipHealth -= 1;
-                audioSources[1].PlayOneShot(audioSources[1].clip);
+                audioSources[1].PlayOneShot(shipImpact);
+                animator.SetTrigger("Damaged");
             }
         }
+
         if (col.gameObject.CompareTag("HealthPack") && shipHealth < 10)
         {
             shipHealth++;
         }
+
         switch (shipHealth)
         {
             case 10:
@@ -71,17 +80,23 @@ public class Ship : MonoBehaviour
             case 1:
                 spriteRenderer.sprite = healthBarSpriteArray[1];
                 break;
-            default:
+            case 0:
+                shipHealth = -1;
                 spriteRenderer.sprite = healthBarSpriteArray[0];
-                Destroy(gameObject);
-                SceneManager.LoadSceneAsync("Game Over");
+                gameObject.GetComponent<Renderer>().enabled = false;
+                ShipShoot.shootDisabled = true;
+                AudioSource.PlayClipAtPoint(shipDeath, new Vector2(0, 0));
+                StartCoroutine(GameOver());
+                break;
+            default:
                 break;
         }
     }
 
-    private IEnumerator NoDamage()
+    private IEnumerator GameOver()
     {
-        yield return new WaitForSeconds(1.0f);
-        canDamage = true;
+        yield return new WaitForSeconds(2);
+        SceneManager.LoadSceneAsync("Game Over");
     }
+
 }
