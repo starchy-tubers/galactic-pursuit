@@ -14,7 +14,6 @@ GameObject:
   - component: {fileID: 1366944655}
   - component: {fileID: 6857071572901219992}
   - component: {fileID: 6857071572901219996}
-  - component: {fileID: 6857071572901219999}
   - component: {fileID: 6152967146380680580}
   - component: {fileID: 400429460629235488}
   - component: {fileID: -2725922036724944073}
@@ -166,26 +165,6 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 1
   m_Constraints: 0
---- !u!249 &6857071572901219999
-AreaEffector2D:
-  serializedVersion: 2
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6857071572901219993}
-  m_Enabled: 1
-  m_UseColliderMask: 1
-  m_ColliderMask:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_UseGlobalAngle: 0
-  m_ForceAngle: 0
-  m_ForceMagnitude: 10
-  m_ForceVariation: 0
-  m_ForceTarget: 0
-  m_Drag: 0
-  m_AngularDrag: 0
 --- !u!82 &6152967146380680580
 AudioSource:
   m_ObjectHideFlags: 0

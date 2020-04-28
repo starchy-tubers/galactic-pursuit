@@ -9,6 +9,7 @@ public class ShipMovement : MonoBehaviour
     bool locked = false;
 
     bool canDoAction = true;
+    public static bool movementDisabled = false;
 
     private Vector2 position;
 
@@ -35,16 +36,16 @@ public class ShipMovement : MonoBehaviour
             Time.deltaTime * 7f);
         transform.position = position;
 
-        if (Input.GetKeyDown("left") && canDoAction && PauseMenu.GameisPaused == false)
+        if (Input.GetKeyDown("left") && canDoAction && PauseMenu.GameisPaused == false && !movementDisabled)
         {
             moveLeft = true;
         }
-        if (Input.GetKeyDown("right") && canDoAction && PauseMenu.GameisPaused == false)
+        if (Input.GetKeyDown("right") && canDoAction && PauseMenu.GameisPaused == false && !movementDisabled)
         {
             moveRight = true;
         }
 
-        if (Input.touchCount > 0)
+        if (Input.touchCount > 0 && !movementDisabled)
         {
             switch (Input.GetTouch(0).phase)
             {

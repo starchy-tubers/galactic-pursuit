@@ -15,6 +15,9 @@ public class Ship : MonoBehaviour
     AudioClip shipDeath;
     Animator animator;
 
+    BoxCollider2D boxCollider2D;
+
+
     private void Start()
     {
         spriteRenderer = GameObject.FindWithTag("HealthBar").GetComponent<SpriteRenderer>();
@@ -23,6 +26,7 @@ public class Ship : MonoBehaviour
         shipImpact = audioSources[1].clip;
         shipDeath = audioSources[2].clip;
         animator = GetComponent<Animator>();
+        boxCollider2D = GetComponent<BoxCollider2D>();
     }
 
     private void OnCollisionEnter2D(Collision2D col)
@@ -83,8 +87,10 @@ public class Ship : MonoBehaviour
             case 0:
                 shipHealth = -1;
                 spriteRenderer.sprite = healthBarSpriteArray[0];
-                gameObject.GetComponent<Renderer>().enabled = false;
+                animator.SetTrigger("Explode");
+                boxCollider2D.size = new Vector2(0, 0);
                 ShipShoot.shootDisabled = true;
+                ShipMovement.movementDisabled = true;
                 AudioSource.PlayClipAtPoint(shipDeath, new Vector2(0, 0));
                 StartCoroutine(GameOver());
                 break;
