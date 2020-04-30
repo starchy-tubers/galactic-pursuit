@@ -2,11 +2,10 @@
 
 public class EnemyLaser : MonoBehaviour
 {
-    public float velY;
-
     private const float velX = 0;
 
-    Rigidbody2D rb;
+    private Rigidbody2D rb;
+    public float velY;
 
     private void Start()
     {
@@ -27,9 +26,7 @@ public class EnemyLaser : MonoBehaviour
         // }
         if (col.gameObject.CompareTag("Ship") ||
             col.gameObject.CompareTag("Shield"))
-        {
             Destroy(gameObject);
-        }
     }
 
     private void OnBecameInvisible()

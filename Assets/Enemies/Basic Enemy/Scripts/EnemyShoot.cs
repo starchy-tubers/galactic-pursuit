@@ -1,12 +1,10 @@
 ﻿using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class EnemyShoot : MonoBehaviour
 {
+    private bool canShoot = true;
     public GameObject EnemyBullet;
-
-    bool canShoot = true;
 
     private void Update()
     {
@@ -17,7 +15,7 @@ public class EnemyShoot : MonoBehaviour
 
     private IEnumerator NoFire()
     {
-        yield return new WaitForSeconds((float)RandomHandler.EnemyRandomShoot());
+        yield return new WaitForSeconds((float) RandomHandler.EnemyRandomShoot());
         Instantiate(EnemyBullet, transform.position, transform.rotation);
         canShoot = true;
     }

@@ -2,11 +2,10 @@
 
 public class ShipBullet : MonoBehaviour
 {
-    public float speed = 5f;
-
     private const float velX = 0;
 
-    Rigidbody2D rb;
+    private Rigidbody2D rb;
+    public float speed = 5f;
 
     private void Start()
     {
@@ -20,10 +19,7 @@ public class ShipBullet : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D col)
     {
-        if (col.gameObject.CompareTag("BasicEnemy") || col.gameObject.CompareTag("Asteroid"))
-        {
-            Destroy(gameObject);
-        }
+        if (col.gameObject.CompareTag("BasicEnemy") || col.gameObject.CompareTag("Asteroid")) Destroy(gameObject);
     }
 
     private void OnBecameInvisible()

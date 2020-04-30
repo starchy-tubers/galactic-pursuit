@@ -3,13 +3,9 @@ using UnityEngine;
 
 public class ShipShoot : MonoBehaviour
 {
-    public GameObject ShipLaser;
-
     public static float multiplier = 1.0f;
 
     public static float multiplierTimer = 4.0f;
-
-    public float shootDelayTime = 0.50f / multiplier;
 
     public static int minMultiplier = 1;
 
@@ -18,6 +14,9 @@ public class ShipShoot : MonoBehaviour
     public static bool canShoot = true;
     public static bool shootDisabled = false;
     public AudioSource audioData;
+    public GameObject ShipLaser;
+
+    public float shootDelayTime = 0.50f / multiplier;
 
     private void Start()
     {
@@ -32,6 +31,7 @@ public class ShipShoot : MonoBehaviour
             multiplier--;
             multiplierTimer = 4.0f;
         }
+
         shootDelayTime = 0.50f / multiplier;
         if (!canShoot) return;
         canShoot = false;
@@ -43,19 +43,14 @@ public class ShipShoot : MonoBehaviour
         if (col.gameObject.CompareTag("BulletsPowerUp"))
         {
             multiplierTimer = 4.0f;
-            if (multiplier < maxMultiplier)
-            {
-                multiplier++;
-            }
+            if (multiplier < maxMultiplier) multiplier++;
         }
 
-        if (col.gameObject.CompareTag("EnemyProjectile") || col.gameObject.CompareTag("BasicEnemy") || col.gameObject.CompareTag("Asteroid"))
+        if (col.gameObject.CompareTag("EnemyProjectile") || col.gameObject.CompareTag("BasicEnemy") ||
+            col.gameObject.CompareTag("Asteroid"))
         {
             multiplierTimer = 4.0f;
-            if (minMultiplier < multiplier)
-            {
-                multiplier--;
-            }
+            if (minMultiplier < multiplier) multiplier--;
         }
     }
 
@@ -64,9 +59,7 @@ public class ShipShoot : MonoBehaviour
         yield return new WaitForSeconds(shootDelayTime);
 
         if (!shootDisabled)
-        {
             Instantiate(ShipLaser, new Vector3(transform.position.x, transform.position.y + 0.5f), transform.rotation);
-        }
         audioData.Play(0);
         canShoot = true;
     }

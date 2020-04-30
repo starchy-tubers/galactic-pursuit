@@ -4,19 +4,17 @@ using UnityEngine.SceneManagement;
 
 public class Ship : MonoBehaviour
 {
-    [SerializeField] public int shipHealth = 10;
-    [SerializeField] Sprite[] healthBarSpriteArray;
-    private SpriteRenderer spriteRenderer;
-    bool canDamage = true;
     public static bool shield = false;
-    AudioSource[] audioSources;
-    AudioClip shipLaser;
-    AudioClip shipImpact;
-    AudioClip shipDeath;
-    Animator animator;
-
-    BoxCollider2D boxCollider2D;
-
+    private Animator animator;
+    private AudioSource[] audioSources;
+    private BoxCollider2D boxCollider2D;
+    private bool canDamage = true;
+    [SerializeField] private Sprite[] healthBarSpriteArray;
+    private AudioClip shipDeath;
+    [SerializeField] public int shipHealth = 10;
+    private AudioClip shipImpact;
+    private AudioClip shipLaser;
+    private SpriteRenderer spriteRenderer;
 
     private void Start()
     {
@@ -33,24 +31,16 @@ public class Ship : MonoBehaviour
     {
         // TODO: Need to make a list of things that can damage the ship and check if the gameObject exists in that list
         // This if statement is unsustainable as more hostile objects are added
-        if (
-            col.gameObject.CompareTag("EnemyProjectile") ||
-            col.gameObject.CompareTag("BasicEnemy") ||
-            col.gameObject.CompareTag("Asteroid")
-        )
-        {
+        if (col.gameObject.CompareTag("EnemyProjectile") || col.gameObject.CompareTag("BasicEnemy") ||
+            col.gameObject.CompareTag("Asteroid"))
             if (shield == false)
             {
                 shipHealth -= 1;
                 audioSources[1].PlayOneShot(shipImpact);
                 animator.SetTrigger("Damaged");
             }
-        }
 
-        if (col.gameObject.CompareTag("HealthPack") && shipHealth < 10)
-        {
-            shipHealth++;
-        }
+        if (col.gameObject.CompareTag("HealthPack") && shipHealth < 10) shipHealth++;
 
         switch (shipHealth)
         {
@@ -94,8 +84,6 @@ public class Ship : MonoBehaviour
                 AudioSource.PlayClipAtPoint(shipDeath, new Vector2(0, 0));
                 StartCoroutine(GameOver());
                 break;
-            default:
-                break;
         }
     }
 
@@ -104,5 +92,4 @@ public class Ship : MonoBehaviour
         yield return new WaitForSeconds(2);
         SceneManager.LoadSceneAsync("Game Over");
     }
-
 }

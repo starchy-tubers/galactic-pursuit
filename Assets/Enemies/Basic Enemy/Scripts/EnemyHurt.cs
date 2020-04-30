@@ -1,19 +1,17 @@
 ﻿using UnityEngine;
-using System.Collections;
 
 public class EnemyHurt : MonoBehaviour
 {
+    private Animator animator;
+
+    private AudioSource[] audioSources;
     public int enemyHealth = 5;
 
-    Animator animator;
+    private AudioClip explosionSound;
 
-    AudioSource[] audioSources;
+    private AudioClip laserImpactSound;
 
-    AudioClip laserImpactSound;
-
-    AudioClip explosionSound;
-
-    void Start()
+    private void Start()
     {
         animator = GetComponent<Animator>();
         audioSources = GetComponents<AudioSource>();
@@ -32,13 +30,10 @@ public class EnemyHurt : MonoBehaviour
             {
                 ShipShoot.multiplierTimer = 4.0f;
                 AudioSource.PlayClipAtPoint(laserImpactSound,
-                new Vector2(0, 0));
+                    new Vector2(0, 0));
                 AudioSource.PlayClipAtPoint(explosionSound, new Vector2(0, 0));
                 Destroy(gameObject);
-                if (ShipShoot.multiplier < ShipShoot.maxMultiplier)
-                {
-                    ShipShoot.multiplier++;
-                }
+                if (ShipShoot.multiplier < ShipShoot.maxMultiplier) ShipShoot.multiplier++;
             }
         }
     }

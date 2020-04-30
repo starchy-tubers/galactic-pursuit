@@ -4,27 +4,19 @@ public class EnemyMovement : MonoBehaviour
 {
     private const float movementSpeed = 1f;
 
-    private enum Direction
-    {
-        Left,
-        Right,
-        Up,
-        Down
-    }
-
-    private Direction shipDirection;
-
-    private Vector3 startPosition;
+    private Vector2 currentPos;
 
     public int enemyHealth = 5;
 
-    private Vector2 currentPos;
-
     private Vector2 position;
 
-    private Vector2 target;
+    private Direction shipDirection;
 
-    private float speed = 7f;
+    private readonly float speed = 7f;
+
+    private Vector3 startPosition;
+
+    private Vector2 target;
 
     private void Start()
     {
@@ -36,9 +28,17 @@ public class EnemyMovement : MonoBehaviour
     {
         position.y =
             Mathf.MoveTowards(transform.position.y,
-            target.y,
-            Time.deltaTime * speed);
+                target.y,
+                Time.deltaTime * speed);
         transform.position = position;
+    }
+
+    private enum Direction
+    {
+        Left,
+        Right,
+        Up,
+        Down
     }
 
     // private void Update()

@@ -1,6 +1,8 @@
+using System;
+
 public static class RandomHandler
 {
-    private static readonly System.Random random = new System.Random();
+    private static readonly Random random = new Random();
 
     public static double EnemyRandomShoot()
     {

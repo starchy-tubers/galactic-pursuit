@@ -3,36 +3,35 @@ using UnityEngine;
 
 public class Asteroid : MonoBehaviour
 {
+    private const float velX = 0;
+
+    private int asteroidHealth = 10;
+
+    private AudioSource[] audioSources;
     public GameObject BulletsPowerUp;
+
+    private readonly float bulletsPowerUpChance = 0.5f;
+
+    private bool canAppear = true;
+
+    private AudioClip explosionSound;
 
     public GameObject HealthPowerUp;
 
-    public GameObject ShieldPowerUp;
-    float RandomNum;
+    private readonly float healthPowerUpChance = 0.5f;
 
-    private const float velX = 0;
+    private AudioClip laserImpactSound;
+
+    private readonly float powerUpDelay = 1.0f;
+    private float RandomNum;
+
+    private Rigidbody2D rb;
+
+    public GameObject ShieldPowerUp;
+
+    private readonly float shieldPowerUpChance = 0.5f;
 
     public float velY = -3f;
-
-    Rigidbody2D rb;
-
-    int asteroidHealth = 10;
-
-    bool canAppear = true;
-
-    float powerUpDelay = 1.0f;
-
-    float bulletsPowerUpChance = 0.5f;
-
-    float healthPowerUpChance = 0.5f;
-
-    float shieldPowerUpChance = 0.5f;
-
-    AudioSource[] audioSources;
-
-    AudioClip laserImpactSound;
-
-    AudioClip explosionSound;
 
     private void Start()
     {
@@ -53,7 +52,7 @@ public class Asteroid : MonoBehaviour
     {
         if (col.gameObject.CompareTag("ShipBullet"))
         {
-            int shipHealth =
+            var shipHealth =
                 GameObject.Find("Ship").GetComponent<Ship>().shipHealth;
             asteroidHealth -= 1;
             audioSources[0].PlayOneShot(laserImpactSound);
@@ -61,7 +60,7 @@ public class Asteroid : MonoBehaviour
             if (asteroidHealth == 0)
             {
                 AudioSource.PlayClipAtPoint(laserImpactSound,
-                new Vector2(0, 0));
+                    new Vector2(0, 0));
                 AudioSource.PlayClipAtPoint(explosionSound, new Vector2(0, 0));
 
                 Destroy(gameObject);
@@ -69,11 +68,12 @@ public class Asteroid : MonoBehaviour
                 if (Random.Range(0.00f, 1.00f) < bulletsPowerUpChance && canAppear)
                 {
                     Instantiate(BulletsPowerUp,
-                    transform.position,
-                    transform.rotation);
+                        transform.position,
+                        transform.rotation);
                     canAppear = false;
                     StartCoroutine(NoAppear());
                 }
+
                 if (
                     Random.Range(0.00f, 1.00f) < healthPowerUpChance &&
                     shipHealth < 10 &&
@@ -81,11 +81,12 @@ public class Asteroid : MonoBehaviour
                 )
                 {
                     Instantiate(HealthPowerUp,
-                    transform.position,
-                    transform.rotation);
+                        transform.position,
+                        transform.rotation);
                     canAppear = false;
                     StartCoroutine(NoAppear());
                 }
+
                 if (Random.Range(0.00f, 1.00f) < shieldPowerUpChance && canAppear && Ship.shield == false)
                 {
                     Instantiate(ShieldPowerUp, transform.position, transform.rotation);
@@ -94,10 +95,8 @@ public class Asteroid : MonoBehaviour
                 }
             }
         }
-        if (col.gameObject.CompareTag("Ship") || col.gameObject.CompareTag("Shield"))
-        {
-            Destroy(gameObject);
-        }
+
+        if (col.gameObject.CompareTag("Ship") || col.gameObject.CompareTag("Shield")) Destroy(gameObject);
     }
 
     private IEnumerator NoAppear()

@@ -1,23 +1,20 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class Multiplier : MonoBehaviour
 {
     private float multiplier;
 
-    [SerializeField]
-    private Sprite[] multiplierSpriteArray;
+    [SerializeField] private Sprite[] multiplierSpriteArray;
 
     private SpriteRenderer spriteRenderer;
 
-    void Start()
+    private void Start()
     {
         spriteRenderer = GetComponent<SpriteRenderer>();
     }
 
     // Update is called once per frame
-    void Update()
+    private void Update()
     {
         switch (ShipShoot.multiplier)
         {

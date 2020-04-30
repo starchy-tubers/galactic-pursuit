@@ -4,15 +4,12 @@ using UnityEngine.SceneManagement;
 
 public class SceneTransitions : MonoBehaviour
 {
-    public Animator transitionAnim;
     public string sceneName;
+    public Animator transitionAnim;
 
-    void Update()
+    private void Update()
     {
-        if (Input.GetMouseButton(0))
-        {
-            StartCoroutine(LoadScene());
-        }
+        if (Input.GetMouseButton(0)) StartCoroutine(LoadScene());
     }
 
     private IEnumerator LoadScene()

@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class FollowObject : MonoBehaviour
@@ -15,12 +13,12 @@ public class FollowObject : MonoBehaviour
         var position = transform.position;
         position.y =
             Mathf.Lerp(transform.position.y,
-            objectToFollow.transform.position.y,
-            interpolation);
+                objectToFollow.transform.position.y,
+                interpolation);
         position.x =
             Mathf.Lerp(transform.position.x,
-            objectToFollow.transform.position.x,
-            interpolation);
+                objectToFollow.transform.position.x,
+                interpolation);
 
         transform.position = position;
     }

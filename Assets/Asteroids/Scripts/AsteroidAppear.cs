@@ -1,17 +1,15 @@
 ﻿using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class AsteroidAppear : MonoBehaviour
 {
-    bool canAppear = true;
-
-    float RandomNum;
-
-    static float[]
-        xCoordinates = new float[] { -3.0f, -1.5f, 0.0f, 1.5f, 3.0f };
+    private static readonly float[]
+        xCoordinates = {-3.0f, -1.5f, 0.0f, 1.5f, 3.0f};
 
     public GameObject Asteroid;
+    private bool canAppear = true;
+
+    private float RandomNum;
 
     private void Update()
     {
