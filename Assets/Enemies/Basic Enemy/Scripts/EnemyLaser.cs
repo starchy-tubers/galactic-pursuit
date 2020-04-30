@@ -19,14 +19,12 @@ public class EnemyLaser : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D col)
     {
-        //Do we need this? lol
-        // if (col.gameObject == gameObject)
-        // {
-        //     Physics.IgnoreCollision(GetComponent<Collider>(), GetComponent<Collider>());
-        // }
         if (col.gameObject.CompareTag("Ship") ||
-            col.gameObject.CompareTag("Shield"))
+            col.gameObject.CompareTag("Shield") ||
+            col.gameObject.CompareTag("Asteroid"))
+        {
             Destroy(gameObject);
+        }
     }
 
     private void OnBecameInvisible()

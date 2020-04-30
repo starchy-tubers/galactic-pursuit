@@ -4,35 +4,22 @@ using UnityEngine;
 public class Asteroid : MonoBehaviour
 {
     private const float velX = 0;
-
-    private int asteroidHealth = 10;
-
     private AudioSource[] audioSources;
     public GameObject BulletsPowerUp;
-
-    private readonly float bulletsPowerUpChance = 0.5f;
-
     private bool canAppear = true;
-
     private AudioClip explosionSound;
-
+    int asteroidHealth = 5;
     public GameObject HealthPowerUp;
-
-    private readonly float healthPowerUpChance = 0.5f;
-
     private AudioClip laserImpactSound;
-
     private readonly float powerUpDelay = 1.0f;
     private float RandomNum;
-
     private Rigidbody2D rb;
-
+    float bulletsPowerUpChance = 1;
+    float healthPowerUpChance = 2;
     public GameObject ShieldPowerUp;
-
     private readonly float shieldPowerUpChance = 0.5f;
-
     public float velY = -3f;
-
+    
     private void Start()
     {
         rb = GetComponent<Rigidbody2D>();
@@ -64,8 +51,7 @@ public class Asteroid : MonoBehaviour
                 AudioSource.PlayClipAtPoint(explosionSound, new Vector2(0, 0));
 
                 Destroy(gameObject);
-
-                if (Random.Range(0.00f, 1.00f) < bulletsPowerUpChance && canAppear)
+                if (Random.Range(1, 3) == bulletsPowerUpChance && canAppear)
                 {
                     Instantiate(BulletsPowerUp,
                         transform.position,
@@ -73,12 +59,7 @@ public class Asteroid : MonoBehaviour
                     canAppear = false;
                     StartCoroutine(NoAppear());
                 }
-
-                if (
-                    Random.Range(0.00f, 1.00f) < healthPowerUpChance &&
-                    shipHealth < 10 &&
-                    canAppear
-                )
+                else if (Random.Range(1, 3) == healthPowerUpChance && canAppear)
                 {
                     Instantiate(HealthPowerUp,
                         transform.position,
@@ -86,10 +67,11 @@ public class Asteroid : MonoBehaviour
                     canAppear = false;
                     StartCoroutine(NoAppear());
                 }
-
-                if (Random.Range(0.00f, 1.00f) < shieldPowerUpChance && canAppear && Ship.shield == false)
+                else
                 {
-                    Instantiate(ShieldPowerUp, transform.position, transform.rotation);
+                    Instantiate(ShieldPowerUp,
+                    transform.position,
+                    transform.rotation);
                     canAppear = false;
                     StartCoroutine(NoAppear());
                 }
