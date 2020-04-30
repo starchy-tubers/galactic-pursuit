@@ -1,9 +1,11 @@
 fileFormatVersion: 2
-guid: fc9ca69aa4ae72e40bae012f97024ede
+guid: c8cec43f1d193b84b9eaedcd371c43f4
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - Asteroid: {fileID: 2688893128327091493, guid: 520b629e86ca44f06aff4b767c7040bd,
+      type: 3}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 

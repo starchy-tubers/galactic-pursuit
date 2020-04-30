@@ -1,11 +1,12 @@
 ﻿using System.Collections;
 using UnityEngine;
+using UnityEngine.Serialization;
 
 public class Asteroid : MonoBehaviour
 {
     private const float velX = 0;
     private AudioSource[] audioSources;
-    public GameObject BulletsPowerUp;
+    public GameObject LaserPowerUp;
     private bool canAppear = true;
     private AudioClip explosionSound;
     int asteroidHealth = 5;
@@ -53,7 +54,7 @@ public class Asteroid : MonoBehaviour
                 Destroy(gameObject);
                 if (Random.Range(1, 3) == bulletsPowerUpChance && canAppear)
                 {
-                    Instantiate(BulletsPowerUp,
+                    Instantiate(LaserPowerUp,
                         transform.position,
                         transform.rotation);
                     canAppear = false;

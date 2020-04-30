@@ -1,0 +1,17 @@
+fileFormatVersion: 2
+guid: fc9ca69aa4ae72e40bae012f97024ede
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - BulletsPowerUp: {fileID: 935948922621535302, guid: 0452c2c68742e0842951811ab543bb84,
+      type: 3}
+  - HealthPowerUp: {fileID: 6221287883558905642, guid: 54682a31cbab6fc47adcb3d231ffe137,
+      type: 3}
+  - ShieldPowerUp: {fileID: 6124883196321756452, guid: 731212b4605504083980acf4f170483a,
+      type: 3}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
