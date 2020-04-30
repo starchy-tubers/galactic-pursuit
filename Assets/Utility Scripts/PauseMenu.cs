@@ -22,13 +22,16 @@ public class PauseMenu : MonoBehaviour
                         Pause();
                 }
         }
-
-        if (Input.GetKeyDown(KeyCode.Escape))
+    }
+    private void OnMouseDown()
+    {
+        if (gameIsPaused)
         {
-            if (gameIsPaused)
-                Resume();
-            else
-                Pause();
+            Resume();
+        }
+        else
+        {
+            Pause();
         }
     }
 
